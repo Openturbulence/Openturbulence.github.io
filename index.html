@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My Database</title>
+</head>
+<body>
+  <h1>Student Database</h1>
+  <ul id="list"></ul>
+
+  <script>
+    fetch("data.json")
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById("list");
+
+        data.forEach(item => {
+          const li = document.createElement("li");
+          li.textContent = `${item.id} - ${item.name} - ${item.major}`;
+          list.appendChild(li);
+        });
+      });
+  </script>
+</body>
+</html>
