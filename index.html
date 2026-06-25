@@ -1,75 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Compressible Turbulent Internal Flow Database</title>
-  <style>
-    body {
-      font-family: Arial;
-      margin: 30px;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Open Turbulence Database</title>
 
-    input {
-      padding: 10px;
-      width: 300px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
+  <link rel="stylesheet" href="styles.css"/>
+  <script defer src="script.js"></script>
 
-    li {
-      padding: 6px 0;
-    }
-  </style>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <h1>Compressible Turbulent Internal Flow Database</h1>
 
-  <!-- 🔍 搜索框 -->
-  <input type="text" id="searchBox" placeholder="Search case...">
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">🌪 Open Turbulence</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#datasets">Datasets</a>
+    <a href="#stats">Stats</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <ul id="list"></ul>
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Open Data for <span>Turbulence Research</span></h1>
+    <p>
+      A curated high-fidelity database for compressible turbulence,
+      DNS datasets, and wall-bounded flows.
+    </p>
 
-  <script>
-    let allData = [];
+    <div class="hero-buttons">
+      <a class="btn primary" href="#datasets">Explore Datasets</a>
+      <a class="btn secondary" href="#about">Learn More</a>
+    </div>
+  </div>
 
-    const list = document.getElementById("list");
-    const searchBox = document.getElementById("searchBox");
+  <div class="hero-image">
+    <img src="assets/hero.jpg" alt="turbulence visualization">
+  </div>
+</section>
 
-    // 读取数据
-    fetch("data.json")
-      .then(res => res.json())
-      .then(data => {
-        allData = data;
-        render(data);
-      });
+<!-- Feature Cards -->
+<section class="features">
+  <div class="card">📦 Open & Free<br><span>Open access datasets</span></div>
+  <div class="card">⚡ High Quality<br><span>DNS / LES validated</span></div>
+  <div class="card">🌐 Diverse Data<br><span>Channel / pipe / BL</span></div>
+  <div class="card">🤝 Community Driven<br><span>Open contribution</span></div>
+</section>
 
-    // 渲染函数
-    function render(data) {
-      list.innerHTML = "";
+<!-- Stats -->
+<section id="stats" class="stats">
+  <div><h2>50+</h2><p>Datasets</p></div>
+  <div><h2>20+</h2><p>Flow Types</p></div>
+  <div><h2>10+</h2><p>Methods</p></div>
+  <div><h2>100+ TB</h2><p>Data Volume</p></div>
+</section>
 
-      data.forEach(item => {
-        const li = document.createElement("li");
-        li.textContent = `${item.id} - ${item.name} - ${item.major}`;
-        list.appendChild(li);
-      });
-    }
+<!-- Dataset Section -->
+<section id="datasets" class="datasets">
+  <h2>Featured Datasets</h2>
+  <div id="dataset-grid" class="grid"></div>
+</section>
 
-    // 🔍 搜索逻辑（实时过滤）
-    searchBox.addEventListener("input", function () {
-      const keyword = this.value.toLowerCase();
+<!-- About -->
+<section id="about" class="about">
+  <h2>About</h2>
+  <p>
+    This project provides open DNS datasets for compressible turbulence,
+    aiming to support reproducible research in high-speed wall-bounded flows.
+  </p>
+</section>
 
-      const filtered = allData.filter(item => {
-        return (
-          String(item.id).includes(keyword) ||
-          item.name.toLowerCase().includes(keyword) ||
-          item.major.toLowerCase().includes(keyword)
-        );
-      });
+<!-- Footer -->
+<footer id="contact">
+  <p>© 2026 Open Turbulence Database | Built with GitHub Pages</p>
+</footer>
 
-      render(filtered);
-    });
-  </script>
 </body>
 </html>
