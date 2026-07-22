@@ -40,20 +40,49 @@ const clearFiltersBtn = document.querySelector(".clear-filters");
 const sortSelect = document.querySelector(".sort-control select");
 const datasetGrid = document.querySelector(".dataset-grid");
 
-function checkedValues(name) {
+let appliedFilters = {
+  flow: [],
+  geometry: [],
+  solver: [],
+};
+
+function selectedValues(name) {
   return filterInputs
     .filter((input) => input.name === name && input.checked)
     .map((input) => input.value);
 }
 
-function cardMatches(card) {
-  const flows = checkedValues("flow");
-  const geometries = checkedValues("geometry");
-  const solvers = checkedValues("solver");
+function readSelectedFilters() {
+  return {
+    flow: selectedValues("flow"),
+    geometry: selectedValues("geometry"),
+    solver: selectedValues("solver"),
+  };
+}
 
-  const flowOk = flows.length === 0 || flows.includes(card.dataset.flow);
-  const geometryOk = geometries.length === 0 || geometries.includes(card.dataset.geometry);
-  const solverOk = solvers.length === 0 || solvers.includes(card.dataset.solver);
+function hasPendingFilterChanges() {
+  const selected = readSelectedFilters();
+  return ["flow", "geometry", "solver"].some((key) => {
+    const current = [...selected[key]].sort().join("|");
+    const applied = [...appliedFilters[key]].sort().join("|");
+    return current !== applied;
+  });
+}
+
+function updateApplyButtonState() {
+  if (!applyFiltersBtn) return;
+  const pending = hasPendingFilterChanges();
+  applyFiltersBtn.classList.toggle("has-pending", pending);
+  applyFiltersBtn.setAttribute(
+    "aria-label",
+    pending ? "Apply pending dataset filters" : "Apply dataset filters"
+  );
+}
+
+function cardMatchesAppliedFilters(card) {
+  const flowOk = appliedFilters.flow.length === 0 || appliedFilters.flow.includes(card.dataset.flow);
+  const geometryOk = appliedFilters.geometry.length === 0 || appliedFilters.geometry.includes(card.dataset.geometry);
+  const solverOk = appliedFilters.solver.length === 0 || appliedFilters.solver.includes(card.dataset.solver);
 
   return flowOk && geometryOk && solverOk;
 }
@@ -66,10 +95,12 @@ function updateDatasetCount() {
 
 function applyDatasetFilters() {
   if (!datasetCards.length) return;
+  appliedFilters = readSelectedFilters();
   datasetCards.forEach((card) => {
-    card.classList.toggle("is-hidden", !cardMatches(card));
+    card.classList.toggle("is-hidden", !cardMatchesAppliedFilters(card));
   });
   updateDatasetCount();
+  updateApplyButtonState();
 }
 
 function sortDatasets() {
@@ -89,12 +120,21 @@ function sortDatasets() {
 }
 
 applyFiltersBtn?.addEventListener("click", applyDatasetFilters);
-filterInputs.forEach((input) => input.addEventListener("change", applyDatasetFilters));
+
+// 只勾选小白框时，不再立即筛选；必须点击 Apply Filters 后才执行筛选。
+filterInputs.forEach((input) => {
+  input.addEventListener("change", updateApplyButtonState);
+});
+
+// Clear all 只清空勾选状态，不立即改变右侧结果；需要再点 Apply Filters 确认。
 clearFiltersBtn?.addEventListener("click", () => {
   filterInputs.forEach((input) => { input.checked = false; });
-  applyDatasetFilters();
+  updateApplyButtonState();
 });
+
 sortSelect?.addEventListener("change", () => {
   sortDatasets();
-  applyDatasetFilters();
 });
+
+updateDatasetCount();
+updateApplyButtonState();

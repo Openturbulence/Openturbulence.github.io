@@ -68,3 +68,10 @@ https://你的用户名.github.io/仓库名/
 - Filter 交互、排序、计数：`script.js`
 - 首页和导航链接：`index.html`
 - 数据卡片图片：`assets/dataset-*.png`
+
+## Dataset page interaction update
+
+- Dataset checkboxes only change the pending filter state.
+- Results update only after clicking **Apply Filters**.
+- **Clear all** only clears the selected boxes; click **Apply Filters** to restore the full list.
+- The datasets page uses a flex layout so the footer stays at the bottom of the page when filtered results become shorter.
