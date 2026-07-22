@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse compressible and incompressible turbulence datasets by flow type, geometry, and solver." />
+  <title>Datasets | Open Turbulence Database</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="datasets-page">
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Open Turbulence Database home">
+        <img src="assets/logo.svg" alt="" class="brand-logo" />
+        <span>Open Turbulence Database</span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a class="active" href="datasets.html">Datasets</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#usage">Usage</a>
+        <a href="index.html#citation">Citation</a>
+        <a href="index.html#contribute">Contribute</a>
+        <a class="github-link" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub repository">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 8.36 22.9c.58.11.79-.25.79-.56v-2.02c-3.22.7-3.9-1.39-3.9-1.39-.53-1.33-1.29-1.68-1.29-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.11-.75.41-1.26.74-1.55-2.57-.29-5.27-1.28-5.27-5.72 0-1.26.45-2.29 1.2-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18A10.98 10.98 0 0 1 12 6.07c.98 0 1.96.13 2.88.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.12 3.06.74.81 1.19 1.84 1.19 3.1 0 4.45-2.71 5.42-5.29 5.71.42.36.79 1.07.79 2.16v3.03c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="dataset-hero" aria-label="Explore datasets">
+      <div class="dataset-hero-inner">
+        <h1>Explore Datasets</h1>
+        <p>Browse our curated collection of open turbulence datasets.</p>
+      </div>
+    </section>
+
+    <section class="datasets-main" aria-label="Dataset library">
+      <div class="datasets-layout">
+        <aside class="filter-card" aria-label="Dataset filters">
+          <div class="filter-head">
+            <div>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16l-6.2 7.15V18l-3.6 1.8v-7.65L4 5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              <strong>Filter Datasets</strong>
+            </div>
+            <button type="button" class="clear-filters">Clear all</button>
+          </div>
+
+          <div class="filter-group">
+            <button type="button" class="filter-title" aria-expanded="true">
+              <span>Flow Type</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 14 5-5 5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <label class="filter-option">
+              <input type="checkbox" name="flow" value="compressible" />
+              <span>Compressible Flow</span>
+              <em>3</em>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="flow" value="incompressible" />
+              <span>Incompressible Flow</span>
+              <em>2</em>
+            </label>
+          </div>
+
+          <div class="filter-group">
+            <button type="button" class="filter-title" aria-expanded="true">
+              <span>Geometry</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 14 5-5 5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <label class="filter-option">
+              <input type="checkbox" name="geometry" value="channel" />
+              <span>Channel</span>
+              <em>2</em>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="geometry" value="pipe" />
+              <span>Pipe</span>
+              <em>2</em>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="geometry" value="curved" />
+              <span>Curved Channel</span>
+              <em>1</em>
+            </label>
+          </div>
+
+          <div class="filter-group filter-group-last">
+            <button type="button" class="filter-title" aria-expanded="true">
+              <span>Solver</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 14 5-5 5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <label class="filter-option">
+              <input type="checkbox" name="solver" value="hyves" />
+              <span>HYVES</span>
+              <em>2</em>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="solver" value="streams" />
+              <span>STREAmS</span>
+              <em>2</em>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="solver" value="inhouse" />
+              <span>In-house Code</span>
+              <em>1</em>
+            </label>
+          </div>
+
+          <button type="button" class="apply-filters">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M6 17h14M4 17h.5M9 11v8M16 5v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="7" r="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="7" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Apply Filters
+          </button>
+        </aside>
+
+        <div class="dataset-content">
+          <div class="dataset-toolbar">
+            <div>
+              <h2>Dataset Library</h2>
+              <p><span id="dataset-count">5</span> datasets found</p>
+            </div>
+            <label class="sort-control">
+              <span>Sort by:</span>
+              <select aria-label="Sort datasets">
+                <option>Name (A-Z)</option>
+                <option>Name (Z-A)</option>
+                <option>Flow Type</option>
+                <option>Solver</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="dataset-grid">
+            <article class="dataset-card" data-flow="compressible" data-geometry="channel" data-solver="hyves" data-name="Channel Flow">
+              <img src="assets/dataset-channel-compressible.png" alt="Compressible channel flow visualization" />
+              <div class="dataset-card-body">
+                <span class="flow-pill compressible">Compressible</span>
+                <h3>Channel Flow</h3>
+                <p>High-speed compressible turbulent channel flow at various Mach numbers.</p>
+                <div class="dataset-tags">
+                  <span>HYVES</span>
+                  <span>Ma 0.2 – 2.5</span>
+                  <span>Re<sub>τ</sub> up to 2000</span>
+                </div>
+                <a href="#" class="view-dataset">View Dataset
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="dataset-card" data-flow="compressible" data-geometry="pipe" data-solver="streams" data-name="Pipe Flow">
+              <img src="assets/dataset-pipe-compressible.png" alt="Compressible pipe flow visualization" />
+              <div class="dataset-card-body">
+                <span class="flow-pill compressible">Compressible</span>
+                <h3>Pipe Flow</h3>
+                <p>Compressible turbulent flow in a circular pipe across a range of Mach numbers.</p>
+                <div class="dataset-tags">
+                  <span>STREAmS</span>
+                  <span>Ma 0.3 – 2.0</span>
+                  <span>Re<sub>τ</sub> up to 3000</span>
+                </div>
+                <a href="#" class="view-dataset">View Dataset
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="dataset-card" data-flow="compressible" data-geometry="curved" data-solver="hyves" data-name="Curved Channel">
+              <img src="assets/dataset-curved-compressible.png" alt="Compressible curved channel flow visualization" />
+              <div class="dataset-card-body">
+                <span class="flow-pill compressible">Compressible</span>
+                <h3>Curved Channel</h3>
+                <p>Compressible turbulent flow in a curved channel with different curvature ratios.</p>
+                <div class="dataset-tags">
+                  <span>HYVES</span>
+                  <span>Ma 0.2 – 1.5</span>
+                  <span>Re<sub>τ</sub> up to 2500</span>
+                </div>
+                <a href="#" class="view-dataset">View Dataset
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="dataset-card" data-flow="incompressible" data-geometry="channel" data-solver="inhouse" data-name="Channel Flow">
+              <img src="assets/dataset-channel-incompressible.png" alt="Incompressible channel flow visualization" />
+              <div class="dataset-card-body">
+                <span class="flow-pill incompressible">Incompressible</span>
+                <h3>Channel Flow</h3>
+                <p>Incompressible turbulent channel flow at multiple friction Reynolds numbers.</p>
+                <div class="dataset-tags">
+                  <span>In-house Code</span>
+                  <span>Re<sub>τ</sub> 180 – 5200</span>
+                  <span>2D/3D</span>
+                </div>
+                <a href="#" class="view-dataset">View Dataset
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="dataset-card" data-flow="incompressible" data-geometry="pipe" data-solver="streams" data-name="Pipe Flow">
+              <img src="assets/dataset-pipe-incompressible.png" alt="Incompressible pipe flow visualization" />
+              <div class="dataset-card-body">
+                <span class="flow-pill incompressible">Incompressible</span>
+                <h3>Pipe Flow</h3>
+                <p>Incompressible turbulent flow in a circular pipe across a wide range of Reynolds numbers.</p>
+                <div class="dataset-tags">
+                  <span>STREAmS</span>
+                  <span>Re<sub>τ</sub> 180 – 5000</span>
+                  <span>2D/3D</span>
+                </div>
+                <a href="#" class="view-dataset">View Dataset
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contribute">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.svg" alt="" />
+        <div>
+          <strong>Open Turbulence Database</strong>
+          <span>Open data. Open science.</span>
+        </div>
+      </div>
+
+      <div class="footer-block" id="usage">
+        <h3>Quick Links</h3>
+        <div class="footer-links">
+          <a href="datasets.html">Datasets</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#usage">Usage</a>
+          <a href="index.html#citation">Citation</a>
+          <a href="index.html#contribute">Contribute</a>
+        </div>
+      </div>
+
+      <div class="footer-block resources">
+        <h3>Resources</h3>
+        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub Repository
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="mailto:contact@example.com">Contact
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="copyright" id="citation">
+        <p>© 2024 Open Turbulence Database</p>
+        <p>Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
