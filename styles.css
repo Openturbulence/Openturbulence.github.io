@@ -1778,3 +1778,21 @@ a {
     align-items: flex-start;
   }
 }
+
+/* About page refinement: keep the collaboration banner close to the footer and avoid large blank space. */
+.about-page main {
+  flex: 0 0 auto;
+}
+
+.about-main {
+  flex: 0 0 auto;
+  padding-bottom: 0;
+}
+
+.collab-banner {
+  margin: 30px 0 12px;
+}
+
+.collab-icon svg {
+  stroke-linejoin: round;
+}
