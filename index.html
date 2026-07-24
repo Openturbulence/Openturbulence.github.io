@@ -130,17 +130,40 @@
           </a>
         </div>
 
-        <div class="visualization-panel">
+        <div class="overview-visual">
           <h2>Featured Visualization</h2>
-          <figure>
-            <img src="assets/visualization-isotropic.png" alt="Isotropic turbulence visualization in a rectangular domain" />
-            <figcaption>Isotropic Turbulence (Re<sub>λ</sub> ≈ 433) - DNS</figcaption>
-          </figure>
-          <div class="dots" aria-label="Visualization carousel indicators">
-            <button class="is-active" aria-label="Visualization 1"></button>
-            <button aria-label="Visualization 2"></button>
-            <button aria-label="Visualization 3"></button>
-            <button aria-label="Visualization 4"></button>
+        
+          <div class="featured-carousel" id="featuredCarousel">
+            <div class="featured-carousel-window">
+              <div class="featured-carousel-track">
+                <figure class="featured-slide">
+                  <img src="assets/homepage_CTPPF.png" alt="Featured visualization 1">
+                  <figcaption>caption1</figcaption>
+                </figure>
+        
+                <figure class="featured-slide">
+                  <img src="assets/homepage_CTPCF.png" alt="Featured visualization 2">
+                  <figcaption>caption2</figcaption>
+                </figure>
+        
+                <figure class="featured-slide">
+                  <img src="assets/homepage_CTPF.png" alt="Featured visualization 3">
+                  <figcaption>caption3</figcaption>
+                </figure>
+        
+                <figure class="featured-slide">
+                  <img src="assets/figure4.png" alt="Featured visualization 4">
+                  <figcaption>caption4</figcaption>
+                </figure>
+              </div>
+            </div>
+        
+            <div class="featured-carousel-dots" aria-label="Featured visualization selector">
+              <button class="featured-dot active" type="button" aria-label="Show figure 1"></button>
+              <button class="featured-dot" type="button" aria-label="Show figure 2"></button>
+              <button class="featured-dot" type="button" aria-label="Show figure 3"></button>
+              <button class="featured-dot" type="button" aria-label="Show figure 4"></button>
+            </div>
           </div>
         </div>
       </div>
