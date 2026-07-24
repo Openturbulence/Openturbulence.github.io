@@ -82,7 +82,13 @@
         <div class="about-team-summary-row">
           <section class="leadership-block" aria-labelledby="leadership-title">
             <h2 id="leadership-title">Leadership &amp; Contributors</h2>
-            <div class="team-grid">
+            <div class="team-carousel" id="teamCarousel" aria-label="Leadership and contributors carousel">
+              <button class="team-carousel-button team-carousel-prev" type="button" aria-label="Previous contributors">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6 9 12l6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+
+              <div class="team-carousel-viewport">
+                <div class="team-grid team-carousel-track">
               <article class="team-card">
                 <div class="team-avatar avatar-blue" aria-hidden="true"><span>PI</span></div>
                 <h3>Prof. John Doe</h3>
@@ -112,6 +118,42 @@
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 6.5h15v11h-15v-11Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m5 7 7 6 7-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </a>
               </article>
+              <article class="team-card">
+                <div class="team-avatar avatar-blue" aria-hidden="true"><span>DC</span></div>
+                <h3>Dr. Sarah Kim</h3>
+                <strong>Data Curator</strong>
+                <p>Coordinates dataset documentation, metadata quality checks, and long-term data maintenance.</p>
+                <a class="mail-button" href="mailto:curator@example.com" aria-label="Email data curator">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 6.5h15v11h-15v-11Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m5 7 7 6 7-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </article>
+
+              <article class="team-card">
+                <div class="team-avatar avatar-cyan" aria-hidden="true"><span>HL</span></div>
+                <h3>Dr. Robert Wilson</h3>
+                <strong>HPC Lead</strong>
+                <p>Supports large-scale simulations, workflow optimization, and high-performance data production.</p>
+                <a class="mail-button" href="mailto:hpc@example.com" aria-label="Email HPC lead">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 6.5h15v11h-15v-11Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m5 7 7 6 7-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </article>
+
+              <article class="team-card">
+                <div class="team-avatar avatar-indigo" aria-hidden="true"><span>RC</span></div>
+                <h3>Dr. Lina Zhao</h3>
+                <strong>Research Contributor</strong>
+                <p>Contributes benchmark cases, validation results, and community feedback for database improvement.</p>
+                <a class="mail-button" href="mailto:contributor@example.com" aria-label="Email research contributor">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 6.5h15v11h-15v-11Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m5 7 7 6 7-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </article>
+
+            </div>
+              </div>
+
+              <button class="team-carousel-button team-carousel-next" type="button" aria-label="Next contributors">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
             </div>
           </section>
 

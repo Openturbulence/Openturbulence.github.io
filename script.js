@@ -195,4 +195,58 @@ updateApplyButtonState();
   startAutoPlay();
 })();
 
+// Leadership & Contributors carousel on the About page.
+// This is isolated from dataset filters and homepage visualization carousel.
+(function () {
+  const carousel = document.querySelector("#teamCarousel");
+  if (!carousel) return;
+
+  const viewport = carousel.querySelector(".team-carousel-viewport");
+  const track = carousel.querySelector(".team-carousel-track");
+  const cards = Array.from(carousel.querySelectorAll(".team-card"));
+  const prevButton = carousel.querySelector(".team-carousel-prev");
+  const nextButton = carousel.querySelector(".team-carousel-next");
+
+  if (!viewport || !track || cards.length === 0 || !prevButton || !nextButton) return;
+
+  let currentIndex = 0;
+
+  function getCardsPerView() {
+    if (window.matchMedia("(max-width: 640px)").matches) return 1;
+    if (window.matchMedia("(max-width: 900px)").matches) return 2;
+    return 3;
+  }
+
+  function clampIndex(index) {
+    const cardsPerView = getCardsPerView();
+    const maxIndex = Math.max(0, cards.length - cardsPerView);
+    return Math.min(Math.max(index, 0), maxIndex);
+  }
+
+  function updateCarousel() {
+    currentIndex = clampIndex(currentIndex);
+    const targetCard = cards[currentIndex];
+    const offset = targetCard ? targetCard.offsetLeft : 0;
+
+    track.style.transform = `translateX(-${offset}px)`;
+
+    prevButton.disabled = currentIndex === 0;
+    nextButton.disabled = currentIndex >= Math.max(0, cards.length - getCardsPerView());
+  }
+
+  prevButton.addEventListener("click", () => {
+    currentIndex = clampIndex(currentIndex - getCardsPerView());
+    updateCarousel();
+  });
+
+  nextButton.addEventListener("click", () => {
+    currentIndex = clampIndex(currentIndex + getCardsPerView());
+    updateCarousel();
+  });
+
+  window.addEventListener("resize", updateCarousel, { passive: true });
+  window.addEventListener("load", updateCarousel);
+
+  updateCarousel();
+})();
 

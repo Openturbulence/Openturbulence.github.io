@@ -2324,3 +2324,123 @@ a {
   font-size: 0.88rem;
   line-height: 1.5;
 }
+
+/* ===================== About team carousel ===================== */
+/* Added on top of the current About page structure. It preserves the existing .team-card style. */
+.team-carousel {
+  position: relative;
+  width: 100%;
+}
+
+.team-carousel-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.team-carousel-track {
+  display: flex !important;
+  grid-template-columns: none !important;
+  gap: 14px;
+  transition: transform 0.45s ease;
+  will-change: transform;
+}
+
+.team-carousel-track .team-card {
+  flex: 0 0 calc((100% - 28px) / 3);
+}
+
+.team-carousel-button {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(52, 126, 248, .38);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .96);
+  color: var(--blue);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, .10);
+  transform: translateY(-50%);
+  transition: background .18s ease, transform .18s ease, opacity .18s ease, box-shadow .18s ease;
+}
+
+.team-carousel-button:hover:not(:disabled) {
+  background: #f0f6ff;
+  transform: translateY(-50%) scale(1.04);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, .14);
+}
+
+.team-carousel-button:disabled {
+  opacity: .32;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.team-carousel-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.team-carousel-prev {
+  left: -43px;
+}
+
+.team-carousel-next {
+  right: -43px;
+}
+
+@media (max-width: 1180px) {
+  .team-carousel-prev {
+    left: -18px;
+  }
+
+  .team-carousel-next {
+    right: -18px;
+  }
+}
+
+@media (max-width: 900px) {
+  .team-carousel-track .team-card {
+    flex-basis: calc((100% - 14px) / 2);
+  }
+
+  .team-carousel-prev {
+    left: -12px;
+  }
+
+  .team-carousel-next {
+    right: -12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .team-carousel-track .team-card {
+    flex-basis: 100%;
+  }
+
+  .team-carousel-button {
+    top: auto;
+    bottom: -46px;
+    transform: none;
+  }
+
+  .team-carousel-button:hover:not(:disabled) {
+    transform: scale(1.04);
+  }
+
+  .team-carousel-prev {
+    left: calc(50% - 42px);
+  }
+
+  .team-carousel-next {
+    right: calc(50% - 42px);
+  }
+
+  .leadership-block {
+    padding-bottom: 50px;
+  }
+}
+
