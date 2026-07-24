@@ -138,3 +138,61 @@ sortSelect?.addEventListener("change", () => {
 
 updateDatasetCount();
 updateApplyButtonState();
+
+
+// Featured Visualization carousel
+(function () {
+  const carousel = document.querySelector("#featuredCarousel");
+  if (!carousel) return;
+
+  const track = carousel.querySelector(".featured-carousel-track");
+  const slides = Array.from(carousel.querySelectorAll(".featured-slide"));
+  const dots = Array.from(carousel.querySelectorAll(".featured-dot"));
+
+  if (!track || slides.length === 0 || dots.length === 0) return;
+
+  let currentIndex = 0;
+  const intervalTime = 3500;
+  let timer = null;
+
+  function showSlide(index) {
+    currentIndex = (index + slides.length) % slides.length;
+
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    dots.forEach((dot, dotIndex) => {
+      dot.classList.toggle("active", dotIndex === currentIndex);
+    });
+  }
+
+  function nextSlide() {
+    showSlide(currentIndex + 1);
+  }
+
+  function startAutoPlay() {
+    stopAutoPlay();
+    timer = setInterval(nextSlide, intervalTime);
+  }
+
+  function stopAutoPlay() {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      showSlide(index);
+      startAutoPlay();
+    });
+  });
+
+  carousel.addEventListener("mouseenter", stopAutoPlay);
+  carousel.addEventListener("mouseleave", startAutoPlay);
+
+  showSlide(0);
+  startAutoPlay();
+})();
+
+
