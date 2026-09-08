@@ -10,6 +10,51 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Page-specific thumbnail tuning: make the compressible pipe-flow preview appear larger without changing other dataset cards. */
+    .pipe-preview-thumb {
+      width: 170px;
+      height: 170px;
+      overflow: hidden;
+      border-radius: 4px;
+      background: #f8fafc;
+      border: 1px solid #101928;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pipe-preview-thumb img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      transform: scale(1.65);
+      transform-origin: center center;
+      border: 0;
+      border-radius: 0;
+      background: #f8fafc;
+    }
+
+    @media (max-width: 1180px) {
+      .pipe-preview-thumb {
+        width: 145px;
+        height: 145px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .pipe-preview-thumb {
+        width: 100%;
+        height: 190px;
+      }
+
+      .pipe-preview-thumb img {
+        transform: scale(1.45);
+      }
+    }
+  </style>
 </head>
 <body class="datasets-page">
   <header class="site-header" id="top">
@@ -176,7 +221,9 @@
             </article>
 
             <article class="dataset-card" data-flow="compressible" data-geometry="pipe" data-solver="inhouse" data-name="Pipe Flow">
-              <img src="assets/datasets_CTPF.png" alt="Compressible pipe flow visualization" />
+              <div class="pipe-preview-thumb">
+                <img src="assets/datasets_CTPF.png" alt="Compressible pipe flow visualization" />
+              </div>
               <div class="dataset-card-body">
                 <span class="flow-pill compressible">Compressible</span>
                 <h3>Pipe Flow</h3>
