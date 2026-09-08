@@ -2472,3 +2472,20 @@ a {
   object-fit: contain;
   padding: 2px;
 }
+
+/* ===================== About profile photo crop fix ===================== */
+/* Keeps the existing circular profile style, but shows the full head/portrait instead of cropping it. */
+.team-photo.team-photo-full {
+  object-fit: contain;
+  object-position: center center;
+  padding: 3px;
+  background: #ffffff;
+}
+
+/* Keep the same behavior on smaller screens. */
+@media (max-width: 640px) {
+  .team-photo.team-photo-full {
+    object-fit: contain;
+    object-position: center center;
+  }
+}
