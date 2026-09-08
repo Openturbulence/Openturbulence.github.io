@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Detailed dataset page for compressible turbulent pipe flow in the Open Turbulence Database." />
+  <title>Compressible Pipe Flow | Open Turbulence Database</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Page-specific table alignment: center the Case column on this detail page. */
+    .setup-table th:first-child,
+    .setup-table td:first-child {
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="dataset-detail-page">
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Open Turbulence Database home">
+        <img src="assets/logo.svg" alt="" class="brand-logo" />
+        <span>Open Turbulence Database</span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a class="active" href="datasets.html">Datasets</a>
+        <a href="about.html">About</a>
+        <a class="github-link" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub repository">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 8.36 22.9c.58.11.79-.25.79-.56v-2.02c-3.22.7-3.9-1.39-3.9-1.39-.53-1.33-1.29-1.68-1.29-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.11-.75.41-1.26.74-1.55-2.57-.29-5.27-1.28-5.27-5.72 0-1.26.45-2.29 1.2-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18A10.98 10.98 0 0 1 12 6.07c.98 0 1.96.13 2.88.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.12 3.06.74.81 1.19 1.84 1.19 3.1 0 4.45-2.71 5.42-5.29 5.71.42.36.79 1.07.79 2.16v3.03c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="detail-main">
+    <section class="detail-header" aria-labelledby="detail-title">
+      <div class="detail-container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="datasets.html">Datasets</a>
+          <span aria-hidden="true">›</span>
+          <span>Compressible Pipe Flow</span>
+        </nav>
+
+        <span class="flow-pill compressible">Compressible</span>
+        <h1 id="detail-title">Compressible Pipe Flow</h1>
+        <p>High-fidelity compressible turbulent pipe flow at multiple Reynolds and Mach numbers.</p>
+        <div class="detail-tags" aria-label="Dataset tags">
+          <span>M<sub>b</sub> = 1.5 – 3.0</span>
+          <span>Re<sub>b</sub> = 1500 – 7300</span>
+          <span>Re<sub>τ</sub> = 233.1 - 514.5</span>
+          <span>3D</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-content" aria-label="Compressible turbulent pipe flow details">
+      <div class="detail-container detail-layout">
+        <div class="detail-primary">
+          <article class="detail-card flow-visual-card">
+            <h2>Instantaneous Flow Field <span>(M<sub>b</sub> = 1.5, Re<sub>b</sub> = 7300)</span></h2>
+            <figure>
+              <img src="assets/dataset-pipe-compressible.png" alt="Representative instantaneous compressible turbulent pipe flow field" style="height: auto; max-height: none; object-fit: contain; object-position: center center; background: #ffffff;" />
+              <figcaption>Representative instantaneous flow field of compressible turbulent pipe flow.</figcaption>
+            </figure>
+          </article>
+
+          <article class="detail-card table-card">
+            <h2>Case Setup / Grid Parameters</h2>
+            <p class="section-note">Multiple high-fidelity direct numerical simulation cases of compressible turbulent pipe flow are provided. All cases use periodic boundary conditions in the streamwise direction and no-slip, isothermal pipe-wall boundary conditions.</p>
+            <div class="table-wrap">
+              <table class="setup-table">
+                <thead>
+                  <tr>
+                    <th>Case</th>
+                    <th>M<sub>b</sub></th>
+                    <th>Re<sub>b</sub></th>
+                    <th>Re<sub>τ</sub></th>
+                    <th>Re<sub>τ,c</sub><sup>*</sup></th>
+                    <th><span style="text-decoration: overline;">ρ</span><sub>w</sub>/<span style="text-decoration: overline;">ρ</span><sub>b</sub></th>
+                    <th><span style="text-decoration: overline;">T</span><sub>c</sub>/<span style="text-decoration: overline;">T</span><sub>w</sub></th>
+                    <th>L<sub>z</sub> × L<sub>r</sub> × L<sub>θ</sub></th>
+                    <th>N<sub>z</sub> × N<sub>r</sub> × N<sub>θ</sub></th>
+                    <th>Δz<sup>+</sup> × (Δr<sup>+</sup><sub>w</sub>, Δr<sup>+</sup><sub>c</sub>) × Δθ<sup>+</sup></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>R3KM15</td><td>1.5</td><td>1500</td><td>233.1</td><td>148.3</td><td>1.39</td><td>1.43</td><td>30R × R × 2πR</td><td>816 × 128 × 320</td><td>8.6 × (0.10, 3.01) × 4.6</td></tr>
+                  <tr><td>R7KM15</td><td>1.5</td><td>7300</td><td>512.6</td><td>336.9</td><td>1.38</td><td>1.40</td><td>30R × R × 2πR</td><td>1615 × 128 × 640</td><td>9.5 × (0.16, 5.02) × 5.0</td></tr>
+                  <tr><td>R5KM30</td><td>3.0</td><td>5150</td><td>514.5</td><td>152.5</td><td>2.55</td><td>2.76</td><td>30R × R × 2πR</td><td>1615 × 128 × 640</td><td>9.5 × (0.16, 5.02) × 5.0</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="table-footnote">M<sub>b</sub>: bulk Mach number; Re<sub>b</sub>: bulk Reynolds number; Re<sub>τ</sub>: friction Reynolds number; Re<sub>τ,c</sub><sup>*</sup>: centerline semilocal friction Reynolds number; R: pipe radius. The listed grid resolution follows Δz<sup>+</sup> × (Δr<sup>+</sup><sub>w</sub>, Δr<sup>+</sup><sub>c</sub>) × Δθ<sup>+</sup>.</p>
+          </article>
+        </div>
+
+        <aside class="detail-sidebar" aria-label="Dataset side information">
+          <article class="detail-card overview-card">
+            <h2>Dataset Overview</h2>
+            <dl class="overview-list">
+              <div><dt>Flow Type</dt><dd>Compressible Turbulence</dd></div>
+              <div><dt>Geometry</dt><dd>Circular Pipe</dd></div>
+              <div><dt>Numerical Method</dt><dd>Direct Numerical Simulation (DNS)</dd></div>
+              <div><dt>Solver</dt><dd>In-house Code</dd></div>
+              <div><dt>Mach Number (M<sub>b</sub>)</dt><dd>1.5 – 3.0</dd></div>
+              <div><dt>Reynolds Number (Re<sub>τ</sub>)</dt><dd>233.1 - 514.5</dd></div>
+              <div><dt>Data Types</dt><dd>Mean Statistics, Instantaneous Fields</dd></div>
+              <div><dt>Dimensions</dt><dd>3D</dd></div>
+              <div><dt>Format</dt><dd>TXT / HDF5</dd></div>
+            </dl>
+          </article>
+
+          <article class="detail-card access-card">
+            <h2>Data Access</h2>
+            <a href="#" target="_blank" rel="noreferrer" class="access-link">
+              <span class="repo-logo zenodo-logo">Z</span>
+              <strong>Zenodo Mean Database</strong>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#" target="_blank" rel="noreferrer" class="access-link">
+              <span class="repo-logo kaggle-logo">k</span>
+              <strong>Kaggle Instantaneous Data</strong>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </article>
+
+          <article class="detail-card citation-list-card">
+            <h2>References</h2>
+            <p class="citation-intro">Related publications for the compressible turbulent pipe-flow dataset have not yet been published.</p>
+
+            <div class="citation-item">
+              <p><strong>Reference information will be updated with future database expansion.</strong> Once the associated article or dataset paper is published, the recommended citation, DOI, and BibTeX information can be added here.</p>
+            </div>
+          </article>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contribute">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.svg" alt="" />
+        <div>
+          <strong>Open Turbulence Database</strong>
+          <span>Open data. Open science.</span>
+        </div>
+      </div>
+
+      <div class="footer-block" id="usage">
+        <h3>Quick Links</h3>
+        <div class="footer-links">
+          <a href="datasets.html">Datasets</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+
+      <div class="footer-block resources">
+        <h3>Resources</h3>
+        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub Repository
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="mailto:contact@example.com">Contact
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="copyright" id="citation">
+        <p>© 2024 Open Turbulence Database</p>
+        <p>Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
