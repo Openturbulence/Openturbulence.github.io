@@ -2444,3 +2444,31 @@ a {
   }
 }
 
+/* ===================== Real contributor profile photos ===================== */
+/* Replaces the CSS-generated placeholder avatars in the About page team cards.
+   Keep the image files under assets/team/ and keep the filenames consistent with about.html. */
+.team-photo {
+  display: block;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center;
+  border: 3px solid #eef5ff;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.6), 0 10px 24px rgba(52,126,248,.13);
+  background: #eef5ff;
+}
+
+/* Optional: use this class on an individual photo when the face needs to move slightly upward.
+   Example: <img class="team-photo team-photo-top" ...> */
+.team-photo-top {
+  object-position: center 35%;
+}
+
+/* Optional: use this class when a full portrait must be shown without cropping.
+   Example: <img class="team-photo team-photo-contain" ...> */
+.team-photo-contain {
+  object-fit: contain;
+  padding: 2px;
+}
