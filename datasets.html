@@ -59,7 +59,7 @@
             <label class="filter-option">
               <input type="checkbox" name="flow" value="compressible" />
               <span>Compressible Flow</span>
-              <em>3</em>
+              <em>4</em>
             </label>
             <label class="filter-option">
               <input type="checkbox" name="flow" value="incompressible" />
@@ -88,6 +88,11 @@
               <span>Curved Channel</span>
               <em>1</em>
             </label>
+            <label class="filter-option">
+              <input type="checkbox" name="geometry" value="couette" />
+              <span>Plane Couette</span>
+              <em>1</em>
+            </label>
           </div>
 
           <div class="filter-group filter-group-last">
@@ -108,7 +113,7 @@
             <label class="filter-option">
               <input type="checkbox" name="solver" value="inhouse" />
               <span>In-house Code</span>
-              <em>1</em>
+              <em>2</em>
             </label>
           </div>
 
@@ -122,7 +127,7 @@
           <div class="dataset-toolbar">
             <div>
               <h2>Dataset Library</h2>
-              <p><span id="dataset-count">5</span> datasets found</p>
+              <p><span id="dataset-count">6</span> datasets found</p>
             </div>
             <label class="sort-control">
               <span>Sort by:</span>
@@ -148,6 +153,23 @@
                   <span>Re<sub>τ</sub> up to 2000</span>
                 </div>
                 <a href="compressible-channel-flow.html" class="view-dataset">View Dataset
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="dataset-card" data-flow="compressible" data-geometry="couette" data-solver="inhouse" data-name="Plane Couette Flow">
+              <img src="assets/R7KM15_CTPCF.png" alt="Compressible plane Couette flow visualization" />
+              <div class="dataset-card-body">
+                <span class="flow-pill compressible">Compressible</span>
+                <h3>Plane Couette Flow</h3>
+                <p>Compressible turbulent plane Couette flow driven by oppositely moving walls.</p>
+                <div class="dataset-tags">
+                  <span>In-house Code</span>
+                  <span>M<sub>w</sub> 0.8 – 5.0</span>
+                  <span>Re<sub>τ</sub> up to 571.4</span>
+                </div>
+                <a href="compressible-plane-couette-flow.html" class="view-dataset">View Dataset
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </a>
               </div>
