@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Detailed dataset page for compressible turbulent plane Couette flow in the Open Turbulence Database." />
+  <title>Compressible Plane Couette Flow | Open Turbulence Database</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Page-specific table alignment: center the Case column on this detail page. */
+    .setup-table th:first-child,
+    .setup-table td:first-child {
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="dataset-detail-page">
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Open Turbulence Database home">
+        <img src="assets/logo.svg" alt="" class="brand-logo" />
+        <span>Open Turbulence Database</span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a class="active" href="datasets.html">Datasets</a>
+        <a href="about.html">About</a>
+        <a class="github-link" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub repository">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 8.36 22.9c.58.11.79-.25.79-.56v-2.02c-3.22.7-3.9-1.39-3.9-1.39-.53-1.33-1.29-1.68-1.29-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.11-.75.41-1.26.74-1.55-2.57-.29-5.27-1.28-5.27-5.72 0-1.26.45-2.29 1.2-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18A10.98 10.98 0 0 1 12 6.07c.98 0 1.96.13 2.88.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.12 3.06.74.81 1.19 1.84 1.19 3.1 0 4.45-2.71 5.42-5.29 5.71.42.36.79 1.07.79 2.16v3.03c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="detail-main">
+    <section class="detail-header" aria-labelledby="detail-title">
+      <div class="detail-container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="datasets.html">Datasets</a>
+          <span aria-hidden="true">›</span>
+          <span>Compressible Plane Couette Flow</span>
+        </nav>
+
+        <span class="flow-pill compressible">Compressible</span>
+        <h1 id="detail-title">Compressible Plane Couette Flow</h1>
+        <p>High-fidelity compressible turbulent plane Couette flow at multiple Reynolds and Mach numbers.</p>
+        <div class="detail-tags" aria-label="Dataset tags">
+          <span>M<sub>w</sub> = 0.8 – 5.0</span>
+          <span>Re<sub>w</sub> = 1500 - 10000</span>
+          <span>Re<sub>τ</sub> = 96.4 - 571.4</span>
+          <span>3D</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-content" aria-label="Compressible plane Couette flow details">
+      <div class="detail-container detail-layout">
+        <div class="detail-primary">
+          <article class="detail-card flow-visual-card">
+            <h2>Instantaneous Flow Field <span>(M<sub>w</sub> = 1.5, Re<sub>w</sub> = 10,000)</span></h2>
+            <figure>
+              <img src="assets/R7KM15_CTPCF.png" alt="Representative instantaneous compressible turbulent plane Couette flow field" style="height: auto; max-height: none; object-fit: contain; object-position: center center; background: #ffffff;" />
+              <figcaption>Representative instantaneous flow field of compressible turbulent plane Couette flow. Flow is from left to right.</figcaption>
+            </figure>
+          </article>
+
+          <article class="detail-card table-card">
+            <h2>Case Setup / Grid Parameters</h2>
+            <p class="section-note">Multiple high-fidelity direct numerical simulation cases of compressible turbulent plane Couette flow are provided. All cases use periodic boundary conditions in the streamwise and spanwise directions and no-slip, isothermal walls.</p>
+            <div class="table-wrap">
+              <table class="setup-table">
+                <thead>
+                  <tr>
+                    <th>Case</th>
+                    <th>M<sub>w</sub></th>
+                    <th>Re<sub>w</sub></th>
+                    <th>Re<sub>τ</sub></th>
+                    <th>Re<sub>τc</sub><sup>*</sup></th>
+                    <th>L<sub>x</sub>/h</th>
+                    <th>L<sub>z</sub>/h</th>
+                    <th>N<sub>x</sub> × N<sub>y</sub> × N<sub>z</sub></th>
+                    <th>Δx<sup>+</sup></th>
+                    <th>Δz<sup>+</sup></th>
+                    <th>Δy<sup>+</sup><sub>wall, center</sub></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>R2KM08</td><td>0.8</td><td>1500</td><td>96.4</td><td>86.0</td><td>24π</td><td>6π</td><td>768 × 129 × 384</td><td>9.5</td><td>4.7</td><td>0.22, 3.15</td></tr>
+                  <tr><td>R4KM08</td><td>0.8</td><td>4000</td><td>228.4</td><td>202.3</td><td>24π</td><td>6π</td><td>1536 × 193 × 768</td><td>11.2</td><td>5.6</td><td>0.36, 4.93</td></tr>
+                  <tr><td>R10KM08</td><td>0.8</td><td>10000</td><td>515.9</td><td>456.4</td><td>24π</td><td>6π</td><td>3072 × 257 × 1536</td><td>12.6</td><td>6.3</td><td>0.60, 8.36</td></tr>
+                  <tr><td>R2KM15</td><td>1.5</td><td>1500</td><td>104.9</td><td>72.6</td><td>24π</td><td>6π</td><td>768 × 129 × 384</td><td>10.3</td><td>5.1</td><td>0.25, 3.40</td></tr>
+                  <tr><td>R4KM15</td><td>1.5</td><td>4000</td><td>251.5</td><td>172.2</td><td>24π</td><td>6π</td><td>1536 × 193 × 768</td><td>12.3</td><td>6.2</td><td>0.39, 5.44</td></tr>
+                  <tr><td>R10KM15</td><td>1.5</td><td>10000</td><td>571.4</td><td>389.8</td><td>24π</td><td>6π</td><td>3072 × 257 × 1536</td><td>14.0</td><td>7.0</td><td>0.66, 9.26</td></tr>
+                  <tr><td>R4KM30</td><td>3.0</td><td>4000</td><td>327.2</td><td>113.7</td><td>24π</td><td>6π</td><td>1536 × 193 × 768</td><td>16.0</td><td>8.0</td><td>0.51, 7.07</td></tr>
+                  <tr><td>R4KM50</td><td>5.0</td><td>4000</td><td>464.2</td><td>74.3</td><td>24π</td><td>6π</td><td>2048 × 193 × 1024</td><td>17.0</td><td>8.5</td><td>0.72, 10.02</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="table-footnote">M<sub>w</sub>: wall Mach number; Re<sub>w</sub>: wall Reynolds number; Re<sub>τ</sub>: friction Reynolds number; Re<sub>τc</sub><sup>*</sup>: centerline semilocal friction Reynolds number; h: half-height of the Couette channel. All listed cases use L<sub>y</sub> = 2h.</p>
+          </article>
+        </div>
+
+        <aside class="detail-sidebar" aria-label="Dataset side information">
+          <article class="detail-card overview-card">
+            <h2>Dataset Overview</h2>
+            <dl class="overview-list">
+              <div><dt>Flow Type</dt><dd>Compressible Turbulence</dd></div>
+              <div><dt>Geometry</dt><dd>Plane Couette</dd></div>
+              <div><dt>Numerical Method</dt><dd>Direct Numerical Simulation (DNS)</dd></div>
+              <div><dt>Solver</dt><dd>In-house Code</dd></div>
+              <div><dt>Mach Number (M<sub>w</sub>)</dt><dd>0.8 – 5.0</dd></div>
+              <div><dt>Reynolds Number (Re<sub>τ</sub>)</dt><dd>96.4 – 571.4</dd></div>
+              <div><dt>Data Types</dt><dd>Mean Statistics, Instantaneous Fields</dd></div>
+              <div><dt>Dimensions</dt><dd>3D</dd></div>
+              <div><dt>Format</dt><dd>TXT / HDF5</dd></div>
+            </dl>
+          </article>
+
+          <article class="detail-card access-card">
+            <h2>Data Access</h2>
+            <a href="#" target="_blank" rel="noreferrer" class="access-link">
+              <span class="repo-logo zenodo-logo">Z</span>
+              <strong>Zenodo Mean Database</strong>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#" target="_blank" rel="noreferrer" class="access-link">
+              <span class="repo-logo kaggle-logo">k</span>
+              <strong>Kaggle Instantaneous Data</strong>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </article>
+
+          <article class="detail-card citation-list-card">
+            <h2>References</h2>
+            <p class="citation-intro">The relevant publications about this database are listed below. Replace the placeholder entries with the final validated references before release.</p>
+
+            <div class="citation-item">
+              <p><strong>Open Turbulence Database Team. (2024).</strong> Compressible turbulent plane Couette flow mean statistics and instantaneous-field archive. <em>Open Turbulence Database.</em></p>
+              <a href="#" target="_blank" rel="noreferrer">DOI / publication link to be added</a>
+            </div>
+          </article>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contribute">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.svg" alt="" />
+        <div>
+          <strong>Open Turbulence Database</strong>
+          <span>Open data. Open science.</span>
+        </div>
+      </div>
+
+      <div class="footer-block" id="usage">
+        <h3>Quick Links</h3>
+        <div class="footer-links">
+          <a href="datasets.html">Datasets</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+
+      <div class="footer-block resources">
+        <h3>Resources</h3>
+        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub Repository
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="mailto:contact@example.com">Contact
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="copyright" id="citation">
+        <p>© 2024 Open Turbulence Database</p>
+        <p>Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
