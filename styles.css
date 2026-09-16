@@ -2503,8 +2503,10 @@ a {
   font-family: inherit;
 }
 
+
 .kaggle-arrow {
-  transition: transform .25s ease;
+  transition:
+    transform 0.35s cubic-bezier(0.22,1,0.36,1);
 }
 
 .kaggle-toggle.active .kaggle-arrow {
@@ -2512,16 +2514,42 @@ a {
 }
 
 .kaggle-case-list {
-  display: none;
-  padding: 6px;
-  border: 1px solid #dbe7ff;
-  border-radius: 6px;
-  background: #fbfdff;
+  display: grid;
   gap: 6px;
+
+  max-height: 0;
+  overflow: hidden;
+
+  padding: 0 6px;
+
+  opacity: 0;
+  transform: translateY(-8px);
+
+  border: 1px solid transparent;
+  border-radius: 6px;
+
+  background: #fbfdff;
+
+  transition:
+    max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    padding 0.35s ease,
+    border-color 0.3s ease;
 }
 
 .kaggle-case-list.active {
-  display: grid;
+
+  max-height: 200px;
+
+  padding: 6px;
+
+  opacity: 1;
+
+  transform: translateY(0);
+
+  border-color: #dbe7ff;
+
 }
 
 .kaggle-case-item {
