@@ -264,8 +264,13 @@ updateApplyButtonState();
   kaggleButton.addEventListener("click", function () {
 
     const isOpen = kaggleList.classList.toggle("active");
+    
+    button.classList.toggle(
+      "active",
+      open
+    );
 
-    kaggleButton.classList.toggle("active", isOpen);
+    // kaggleButton.classList.toggle("active", isOpen);
 
     kaggleButton.setAttribute(
       "aria-expanded",
