@@ -250,3 +250,29 @@ updateApplyButtonState();
   updateCarousel();
 })();
 
+
+
+// ===================== Kaggle case dropdown =====================
+// Expand / collapse Kaggle case list in dataset detail pages.
+
+(function () {
+  const kaggleButton = document.querySelector(".kaggle-toggle");
+  const kaggleList = document.querySelector(".kaggle-case-list");
+
+  if (!kaggleButton || !kaggleList) return;
+
+  kaggleButton.addEventListener("click", function () {
+
+    const isOpen = kaggleList.classList.toggle("active");
+
+    kaggleButton.classList.toggle("active", isOpen);
+
+    kaggleButton.setAttribute(
+      "aria-expanded",
+      isOpen ? "true" : "false"
+    );
+
+  });
+
+})();
+
