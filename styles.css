@@ -2489,3 +2489,56 @@ a {
     object-position: center center;
   }
 }
+
+
+/* Kaggle case dropdown */
+.kaggle-dropdown {
+  display: grid;
+  gap: 8px;
+}
+
+.kaggle-toggle {
+  width: 100%;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.kaggle-arrow {
+  transition: transform .25s ease;
+}
+
+.kaggle-toggle.active .kaggle-arrow {
+  transform: rotate(180deg);
+}
+
+.kaggle-case-list {
+  display: none;
+  padding: 6px;
+  border: 1px solid #dbe7ff;
+  border-radius: 6px;
+  background: #fbfdff;
+  gap: 6px;
+}
+
+.kaggle-case-list.active {
+  display: grid;
+}
+
+.kaggle-case-item {
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 5px;
+  background: #fff;
+  color: #334155;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12.5px;
+  font-weight: 750;
+}
+
+.kaggle-case-item:hover {
+  color: #347ef8;
+  background: #f1f6ff;
+}
