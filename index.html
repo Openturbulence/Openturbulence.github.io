@@ -67,6 +67,68 @@
  .database-cards{grid-template-columns:1fr;}
 }
 </style>
+
+<style>
+.database-intro{
+  padding:34px 0;
+  background:linear-gradient(180deg,#f8fbff 0%,#eef5ff 100%);
+}
+.database-intro-inner{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.05fr 1.95fr;
+  gap:34px;
+  align-items:center;
+}
+.database-text h2{
+  font-size:28px;
+  margin-bottom:18px;
+}
+.database-text p{
+  font-size:15px;
+  line-height:1.75;
+  color:#173354;
+}
+.database-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.database-card{
+  background:#fff;
+  border:1px solid #dbe5f5;
+  border-radius:12px;
+  padding:22px 20px;
+  min-height:170px;
+}
+.database-card h3{
+  font-size:18px;
+  margin:0 0 12px;
+  color:#10233f;
+}
+.database-card p{
+  font-size:14px;
+  line-height:1.65;
+  color:#304866;
+}
+.card-line{
+  width:38px;
+  height:3px;
+  background:#3478ff;
+  border-radius:4px;
+  margin-bottom:18px;
+}
+@media(max-width:900px){
+ .database-intro-inner{
+  grid-template-columns:1fr;
+ }
+ .database-cards{
+  grid-template-columns:1fr;
+ }
+}
+</style>
+
 </head>
 <body>
   <header class="site-header" id="top">
@@ -120,44 +182,55 @@
 
     <section class="feature-band database-intro" aria-label="Database information">
   <div class="database-intro-inner">
+
     <div class="database-text">
       <h2>Database Basics</h2>
       <p>
-        OTD provides a unified access point to a growing collection of
+        Open Turbulence Database (OTD) provides a unified access point to
         high-fidelity turbulence datasets and numerical simulations.
-        All data are openly accessible, carefully documented, and organized
-        to support reproducible and transparent research.
+        All datasets are openly accessible, carefully documented, and organized
+        to support reproducible research.
       </p>
       <p>
-        We focus on a wide range of turbulent flows, simulation methods,
-        and Reynolds numbers to enable comparative analysis and accelerate
-        scientific discovery.
+        The database covers diverse turbulent flow configurations,
+        numerical methods, and Reynolds numbers, enabling comparative
+        analysis and data-driven discovery.
       </p>
     </div>
 
     <div class="database-cards">
+
       <article class="database-card">
-        <div class="icon-bubble"><span>◉</span></div>
-        <h3>Mission</h3>
-        <p>Provide a reliable open-access repository of turbulence datasets to accelerate research and education across engineering, physics, and data science.</p>
+        <h3>High-Fidelity Data</h3>
+        <div class="card-line"></div>
+        <p>
+          DNS and LES datasets with detailed simulation parameters,
+          numerical settings, and validation information.
+        </p>
       </article>
 
       <article class="database-card">
-        <div class="icon-bubble"><span>◌</span></div>
-        <h3>Vision</h3>
-        <p>Become a comprehensive platform for reproducible turbulence research and scientific collaboration.</p>
+        <h3>Diverse Flow Configurations</h3>
+        <div class="card-line"></div>
+        <p>
+          Channel, pipe, boundary layer, plane Couette, plane Poiseuille,
+          and other turbulent flows covering a wide range of conditions.
+        </p>
       </article>
 
       <article class="database-card">
-        <div class="icon-bubble"><span>♧</span></div>
-        <h3>Open Science</h3>
-        <p>Promote open data sharing and encourage contributions from researchers worldwide.</p>
+        <h3>Open Access & Reproducible</h3>
+        <div class="card-line"></div>
+        <p>
+          Freely available datasets with documented metadata to support
+          transparent and reproducible turbulence research.
+        </p>
       </article>
+
     </div>
   </div>
 </section>
-
-    <section class="overview-section" id="datasets" aria-label="Database overview">
+<section class="overview-section" id="datasets" aria-label="Database overview">
       <div class="overview-grid">
         <div class="overview-copy">
           <h2>Database Overview</h2>
