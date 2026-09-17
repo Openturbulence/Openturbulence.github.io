@@ -226,37 +226,34 @@
 </style>
 
 <style>
-/* Homepage footer alignment: keep footer at viewport bottom like datasets page */
+/* Final footer positioning fix */
 html, body {
   min-height: 100%;
 }
 
-body.home-page {
-  min-height: 100vh;
+body {
   display: flex;
   flex-direction: column;
 }
 
-body.home-page > main {
+main {
   flex: 1 0 auto;
 }
 
-body.home-page .site-footer {
+.site-footer {
   margin-top: auto;
   flex-shrink: 0;
 }
 
-/* remove any extra bottom spacing after homepage sections */
-body.home-page .overview-section {
-  padding-bottom: 0;
+/* Remove extra homepage bottom spacing */
+.overview-section {
+  padding-bottom: 0 !important;
 }
 
-body.home-page .featured-carousel-dots {
-  margin-bottom: 0;
-}
 </style>
+
 </head>
-<body class="home-page">
+<body>
   <header class="site-header" id="top">
     <div class="header-inner">
       <a class="brand" href="index.html" aria-label="Open Turbulence Database home">
