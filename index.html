@@ -228,26 +228,32 @@
 <style>
 /* Final footer positioning fix */
 html, body {
-  min-height: 100%;
+  min-height: 100vh;
+  height: 100%;
 }
 
 body {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 main {
   flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .site-footer {
   margin-top: auto;
   flex-shrink: 0;
+  width: 100%;
 }
 
 /* Remove extra homepage bottom spacing */
 .overview-section {
   padding-bottom: 0 !important;
+  flex: 0 0 auto;
 }
 
 </style>
