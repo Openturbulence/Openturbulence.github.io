@@ -2571,9 +2571,30 @@ a {
   background: #f1f6ff;
 }
 
+/* ===================== Homepage layout final override ===================== */
+/* Consolidated homepage adjustments:
+   - Database Basics and Database Overview share the same alignment
+   - Homepage sections have continuous background transition
+   - Footer follows content without unnecessary blank space
+*/
 
-/* ===================== Homepage alignment refinement ===================== */
-/* Unify Database Basics and Database Overview left alignment */
+body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) main {
+  flex: 0 0 auto;
+  margin-bottom: 0;
+}
+
+body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) .site-footer {
+  margin-top: 0;
+  flex-shrink: 0;
+}
+
+/* Common homepage content width */
 .database-intro-inner,
 .overview-grid {
   width: min(1115px, calc(100% - 160px));
@@ -2581,23 +2602,24 @@ a {
   margin-right: auto;
 }
 
-/* Remove visual separation between the two homepage information blocks */
+/* Same heading hierarchy */
+.database-intro-inner h2,
+.database-text h2,
+.overview-copy h2,
+.visualization-panel h2 {
+  color: #111827;
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+/* Remove hard separation between homepage blocks */
 .feature-band {
   border-bottom: none;
   padding-bottom: 0;
 }
 
-.database-intro-inner {
-  padding-bottom: 0;
-}
-
-.overview-section {
-  padding-top: 0;
-  margin-top: 0;
-  border-top: none;
-}
-
-/* Keep the same background transition instead of a hard dividing line */
 .feature-band,
 .overview-section {
   background:
@@ -2605,89 +2627,24 @@ a {
     linear-gradient(180deg, #f8fbff 0%, #f4f8fd 100%);
 }
 
-/* Align title hierarchy */
-.database-intro-inner h2,
-.overview-copy h2,
-.visualization-panel h2 {
-  font-size: 20px;
-  line-height: 1.25;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-}
-
-.database-intro-inner h2 {
+.overview-section {
+  min-height: 0;
   margin-top: 0;
-  margin-bottom: 14px;
+  padding-top: 0;
+  padding-bottom: 30px;
 }
 
-/* Make overview start at exactly the same x-position */
 .overview-copy {
   margin-left: 0;
   padding-left: 0;
 }
 
+.database-intro-inner h2,
 .overview-copy h2 {
   margin-top: 0;
 }
 
-/* Reduce excessive empty gap between database description and overview */
-.overview-section {
-  min-height: 310px;
-  padding-bottom: 43px;
-}
-
-.database-intro-inner {
-  align-items: start;
-}
-
-/* Homepage database mini cards: cleaner academic style */
-.mission-mini-grid .mini-icon {
-  display: none;
-}
-
-.mini-info-card {
-  padding-top: 18px;
-}
-
-.mini-info-card h3 {
-  margin-top: 0;
-}
-
-
-/* ===================== Final homepage fixes ===================== */
-
-/* Database Basics title: match Database Overview darkness and weight */
-.database-text h2 {
-  color: #111827 !important;
-  font-weight: 800 !important;
-}
-
-/* Ensure Database Basics and Database Overview start from the same left edge */
-.database-intro-inner,
-.overview-grid {
-  width: min(1115px, calc(100% - 160px)) !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-/* Remove unnecessary vertical blank area before footer on homepage */
-body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) main {
-  flex: 0 0 auto;
-}
-
+/* Homepage footer spacing correction */
 body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) .overview-section {
-  min-height: 0 !important;
-  padding-bottom: 30px !important;
-}
-
-/* Footer follows content directly */
-body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) .site-footer {
-  margin-top: 0 !important;
-  flex-shrink: 0;
+  min-height: auto;
 }
