@@ -2892,3 +2892,30 @@ body.about-page .about-container {
 body.about-page .collab-banner {
   margin-bottom: 0;
 }
+
+
+/* ===================== FINAL ABOUT COLLAB FOOTER ALIGNMENT =====================
+   Move Collaboration & Citation block to the bottom of the content area,
+   directly above footer. Keep all existing About sections unchanged.
+============================================================================= */
+
+body.about-page > main {
+  flex: 1 0 auto;
+}
+
+body.about-page .about-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+body.about-page .about-container {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+body.about-page .collab-banner {
+  margin-top: auto;
+  margin-bottom: 0;
+}
