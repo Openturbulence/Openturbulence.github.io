@@ -3,93 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Open Turbulence Database — open-access turbulence datasets for scientific research." />
-  <title>Open Turbulence Database</title>
+  <meta name="description" content="About the Open Turbulence Database team, database basics, and open-science mission." />
+  <title>About | Open Turbulence Database</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-
-
-  
-<style>
-/* ===== Database Basics layout restoration ===== */
-.database-intro-inner{
-  width:min(1115px, calc(100% - 160px));
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:390px 1fr;
-  gap:38px;
-  align-items:start;
-}
-
-.database-text h2{
-  margin:0 0 14px;
-  font-size:20px;
-  line-height:1.25;
-  font-weight:800;
-  letter-spacing:-0.03em;
-}
-
-.database-text p{
-  margin:0;
-  color:#334155;
-  font-size:13.5px;
-  line-height:1.65;
-  font-weight:500;
-}
-
-.database-cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-}
-
-.database-card{
-  min-height:175px;
-  padding:18px 16px;
-  background:rgba(255,255,255,.96);
-  border:1px solid #dce4ef;
-  border-radius:7px;
-  box-shadow:0 8px 22px rgba(15,23,42,.045);
-}
-
-.database-card h3{
-  margin:0 0 10px;
-  font-size:15px;
-  line-height:1.25;
-  font-weight:800;
-  color:#111827;
-}
-
-.database-card .card-line{
-  width:30px;
-  height:3px;
-  margin-bottom:12px;
-  border-radius:2px;
-  background:#347ef8;
-}
-
-.database-card p{
-  margin:0;
-  color:#475569;
-  font-size:12.5px;
-  line-height:1.55;
-  font-weight:500;
-}
-
-@media(max-width:900px){
- .database-intro-inner{
-   grid-template-columns:1fr;
- }
- .database-cards{
-   grid-template-columns:1fr;
- }
-}
-</style>
 </head>
-<body>
+<body class="about-page">
   <header class="site-header" id="top">
     <div class="header-inner">
       <a class="brand" href="index.html" aria-label="Open Turbulence Database home">
@@ -98,10 +20,10 @@
       </a>
 
       <nav class="nav" aria-label="Main navigation">
-        <a class="active" href="index.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="datasets.html">Datasets</a>
-        <a href="about.html">About</a>
-        <!-- 
+        <a class="active" href="about.html">About</a>
+        <!--
         <a href="index.html#usage">Usage</a>
         <a href="index.html#citation">Citation</a>
         <a href="index.html#contribute">Contribute</a> 
@@ -116,129 +38,152 @@
   </header>
 
   <main>
-    <section class="hero" aria-label="Open turbulence research data">
-      <div class="hero-inner">
-        <div class="hero-content">
-          <h1>Open Data for<br><span>Turbulence</span> Research</h1>
-          <p>A curated collection of high-quality, open-access turbulence datasets for the scientific community.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="datasets.html">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 3.75a3.5 3.5 0 0 1 3.5 3.5v1h1.25A2.25 2.25 0 0 1 19 10.5v7.25A2.25 2.25 0 0 1 16.75 20H7.25A2.25 2.25 0 0 1 5 17.75V10.5a2.25 2.25 0 0 1 2.25-2.25H8.5v-1A3.5 3.5 0 0 1 12 3.75Zm2 4.5v-1a2 2 0 1 0-4 0v1h4Zm-7.5 2.25v7.25c0 .41.34.75.75.75h9.5c.41 0 .75-.34.75-.75V10.5a.75.75 0 0 0-.75-.75h-9.5a.75.75 0 0 0-.75.75Zm2.75 2.25h5.5a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1 0-1.5Zm0 3h3.5a.75.75 0 0 1 0 1.5h-3.5a.75.75 0 0 1 0-1.5Z" fill="currentColor"/>
-              </svg>
-              Explore Datasets
-            </a>
-            <a class="btn btn-outline" href="about.html">
-              Learn More
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="m7 9 5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        </div>
+    <section class="about-hero" aria-label="About the database">
+      <div class="about-hero-inner">
+        <h1>About the Database</h1>
+        <p>Open turbulence data for open science. We are a global community building high-quality, open-access datasets to advance turbulence research.</p>
       </div>
     </section>
 
-    <section class="feature-band database-intro" aria-label="Database information">
-  <div class="database-intro-inner">
+    <section class="about-main" aria-label="About Open Turbulence Database">
+      <div class="about-container">
+        <div class="about-basics-row">
+          <article class="database-basics about-text-block">
+            <h2>Database Basics</h2>
+            <p>OTD provides a unified access point to a growing collection of high-fidelity turbulence datasets and numerical simulations. All data are openly accessible, carefully documented, and organized to support reproducible and transparent research.</p>
+            <p>We focus on a wide range of flows, methods, and Reynolds numbers to enable comparative analysis and accelerate scientific discovery.</p>
+          </article>
 
-    <div class="database-text">
-      <h2>Database Basics</h2>
-      <p>
-        Open Turbulence Database (OTD) provides a unified access point to
-        high-fidelity turbulence datasets and numerical simulations.
-        All datasets are openly accessible, carefully documented, and organized
-        to support reproducible research. The database covers diverse turbulent flow configurations,
-        numerical methods, and Mach and Reynolds numbers, enabling comparative
-        analysis and data-driven discovery.
-      </p>
-    </div>
-
-    <div class="database-cards">
-
-      <article class="database-card">
-        <h3>High-Fidelity Data</h3>
-        <div class="card-line"></div>
-        <p>
-          DNS datasets with detailed simulation parameters,
-          numerical settings, and validation information.
-        </p>
-      </article>
-
-      <article class="database-card">
-        <h3>Diverse Flow Configurations</h3>
-        <div class="card-line"></div>
-        <p>
-          Channel (plane/curved), pipe and other turbulent flows covering a wide range of conditions.
-        </p>
-      </article>
-
-      <article class="database-card">
-        <h3>Open Access & Reproducible</h3>
-        <div class="card-line"></div>
-        <p>
-          Freely available datasets with documented metadata to support
-          transparent and reproducible turbulence research.
-        </p>
-      </article>
-
-    </div>
-  </div>
-</section>
-<section class="overview-section" id="datasets" aria-label="Database overview">
-      <div class="overview-grid">
-        <div class="overview-copy">
-          <h2>Database Overview</h2>
-          <div class="stats">
-            <div><strong>30+</strong><span>Datasets</span></div>
-            <div><strong>5+</strong><span>Flow Configurations</span></div>
-            <div><strong>4+</strong><span>Simulation Methods</span></div>
-            <div><strong>1000+</strong><span>GB of Data</span></div>
+          <div class="mission-mini-grid" aria-label="Mission, vision and open science">
+            <article class="mini-info-card">
+              <div class="mini-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v3M21.5 12h-3M12 21.5v-3M2.5 12h3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <h3>Mission</h3>
+              <p>Provide a reliable, open-access repository of turbulence datasets to accelerate research and education across engineering, physics, and data science.</p>
+            </article>
+            <article class="mini-info-card">
+              <div class="mini-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.7-6 9.5-6 9.5 6 9.5 6-3.7 6-9.5 6-9.5-6-9.5-6Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              </div>
+              <h3>Vision</h3>
+              <p>Become the global standard for open turbulence data, enabling reproducible science and empowering the next generation of discoveries.</p>
+            </article>
+            <article class="mini-info-card">
+              <div class="mini-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="9" r="2.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 20c.55-3.3 2.6-5.1 5.5-5.1 2.92 0 4.95 1.8 5.5 5.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14.6 15.8c2.8.25 4.5 1.7 4.9 4.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <h3>Open Science</h3>
+              <p>We believe that open data drives innovation. OTDB is freely accessible to all and built through the contributions of researchers worldwide.</p>
+            </article>
           </div>
-          <p>Our database is continuously growing. We aim to support reproducible research and accelerate discovery in turbulence.</p>
-          <a class="btn btn-secondary" href="datasets.html">View All Datasets
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M5 12h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
         </div>
 
-        <div class="overview-visual">
-          <h2>Featured Visualization</h2>
-        
-          <div class="featured-carousel" id="featuredCarousel">
-            <div class="featured-carousel-window">
-              <div class="featured-carousel-track">
-                <figure class="featured-slide">
-                  <img src="assets/homepage_CTPPF.png" alt="Featured visualization 1">
-                  <figcaption>Local vortical structures from high-Reynolds-number compressible plane Poiseuille flows</figcaption>
-                </figure>
-        
-                <figure class="featured-slide">
-                  <img src="assets/homepage_CTPCF.png" alt="Featured visualization 2">
-                  <figcaption>Instantaneous streamwise velocity field at y* ≈ 15 from compressible plane Couette flows</figcaption>
-                </figure>
-        
-                <figure class="featured-slide">
-                  <img class="fit-contain-image" src="assets/homepage_CTPF.gif" alt="Featured visualization 3">
-                  <figcaption>Compressible turbulent pipe flows</figcaption>
-                </figure>
-        
-                <figure class="featured-slide">
-                  <img src="assets/homepage_Curved_channel.png" alt="Featured visualization 4">
-                  <figcaption>2D compressible curved channel</figcaption>
-                </figure>
+        <div class="about-team-summary-row">
+          <section class="leadership-block" aria-labelledby="leadership-title">
+            <h2 id="leadership-title">Leadership &amp; Contributors</h2>
+            <div class="team-carousel" id="teamCarousel" aria-label="Leadership and contributors carousel">
+              <button class="team-carousel-button team-carousel-prev" type="button" aria-label="Previous contributors">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6 9 12l6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+
+              <div class="team-carousel-viewport">
+                <div class="team-grid team-carousel-track">
+              <article class="team-card">
+                <img class="team-photo team-photo-full" src="assets/team/Prof_Yao.jpg" alt="Prof. Jie Yao">
+                <h3>Prof. Jie Yao</h3>
+                <strong>Leader</strong>
+                <p>Expert in vortex dynamics, turbulence, flow control, and high-performance computing.</p>
+                <a class="mail-button" href="mailto:advisor@example.com" aria-label="Email advisor">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 6.5h15v11h-15v-11Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m5 7 7 6 7-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </article>
+
+              <article class="team-card">
+                <img class="team-photo team-photo-full" src="assets/team/Postdoc_Chen.webp" alt="Dr. Michael Lee">
+                <h3>Postdoc. Yongkai Chen</h3>
+                <strong>Data Architect</strong>
+                <p>Designs scalable data infrastructure and tools to ensure performance, reliability, and accessibility.</p>
+                <a class="mail-button" href="mailto:architect@example.com" aria-label="Email data architect">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 6.5h15v11h-15v-11Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m5 7 7 6 7-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </article>
+
+              <article class="team-card">
+                <img class="team-photo team-photo-full" src="assets/team/Prof_Mao.png" alt="Dr. Jane Smith">
+                <h3>Prof. Xuerui Mao</h3>
+                <strong>Project Supervisor</strong>
+                <p>Leads the development of OTDB and drives data curation standards and community engagement.</p>
+                <a class="mail-button" href="mailto:lead@example.com" aria-label="Email project lead">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 6.5h15v11h-15v-11Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m5 7 7 6 7-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </article>
+                  
+              <article class="team-card">
+                <img class="team-photo team-photo-full" src="assets/team/Doc_Li.jpg" alt="Dr. Sarah Kim">
+                <h3>Dr. Qinyuan Li</h3>
+                <strong>Data Curator</strong>
+                <p>Coordinates dataset documentation, metadata quality checks, and long-term data maintenance.</p>
+                <a class="mail-button" href="mailto:curator@example.com" aria-label="Email data curator">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 6.5h15v11h-15v-11Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m5 7 7 6 7-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+              </article>
+
+            </div>
+              </div>
+
+              <button class="team-carousel-button team-carousel-next" type="button" aria-label="Next contributors">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </section>
+
+          <section class="database-summary" aria-labelledby="summary-title">
+            <h2 id="summary-title">Our Team</h2>
+            <div class="summary-card">
+              <div class="summary-copy">
+                <div class="summary-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 6v12c0 1.66 3.13 3 7 3s7-1.34 7-3V6M5 12c0 1.66 3.13 3 7 3s7-1.34 7-3M5 18c0 1.66 3.13 3 7 3s7-1.34 7-3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div>
+                  <h3>A Comprehensive Resource for Turbulence Research</h3>
+                  <p>OTDB hosts a diverse collection of high-quality turbulence datasets covering a wide range of flows, methods, and scales. Every dataset is carefully curated, documented, and validated to support reproducible and impactful research.</p>
+                </div>
+              </div>
+              <div class="summary-stats">
+                <div><strong>50+</strong><span>Datasets</span></div>
+                <div><strong>20+</strong><span>Flow Configurations</span></div>
+                <div><strong>10+</strong><span>Simulation Methods</span></div>
+                <div><strong>100+</strong><span>TB of Data</span></div>
               </div>
             </div>
-        
-            <div class="featured-carousel-dots" aria-label="Featured visualization selector">
-              <button class="featured-dot active" type="button" aria-label="Show figure 1"></button>
-              <button class="featured-dot" type="button" aria-label="Show figure 2"></button>
-              <button class="featured-dot" type="button" aria-label="Show figure 3"></button>
-              <button class="featured-dot" type="button" aria-label="Show figure 4"></button>
+          </section>
+        </div>
+
+        <section class="collab-banner" aria-label="Collaboration and citation">
+          <div class="collab-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 10.2 5.4 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M21 10.2 18.6 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M5.8 12.7 9.2 9.3a3 3 0 0 1 4.1-.12l.65.55" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18.2 12.7 14.8 9.3a3 3 0 0 0-4.1-.12L8.35 11.3a1.55 1.55 0 0 0 2.06 2.32l1.82-1.52" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="m11.8 12.1 4.05 3.72a1.55 1.55 0 0 1-2.07 2.3l-.68-.62" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="m8.35 13.75 4.28 3.92a1.55 1.55 0 0 0 2.1-.05" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="collab-copy">
+            <h2>Collaboration &amp; Citation</h2>
+            <p>We welcome collaborations, contributions, and feedback from the research community. If you use our data, please cite our database to support open science.</p>
+            <div class="collab-actions">
+              <a class="btn btn-primary" href="index.html#citation">How to Cite
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-outline" href="index.html#contribute">Contribute
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </section>
   </main>
@@ -258,7 +203,7 @@
         <div class="footer-links">
           <a href="datasets.html">Datasets</a>
           <a href="about.html">About</a>
-          <!-- 
+          <!--
           <a href="index.html#usage">Usage</a>
           <a href="index.html#citation">Citation</a>
           <a href="index.html#contribute">Contribute</a>
