@@ -2919,3 +2919,119 @@ body.about-page .collab-banner {
   margin-top: auto;
   margin-bottom: 0;
 }
+
+
+/* ================= New About Team Layout ================= */
+
+.about-team-page {
+  padding: 34px 0 0;
+}
+
+.team-intro {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:50px;
+  margin-bottom:42px;
+}
+
+.section-label {
+  display:inline-block;
+  color:#347ef8;
+  background:#eef5ff;
+  border-radius:20px;
+  padding:4px 12px;
+  font-size:11px;
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+.team-intro h2 {
+  font-size:34px;
+  margin:0 0 14px;
+  letter-spacing:-.04em;
+}
+
+.team-intro h2 span {
+  color:#347ef8;
+}
+
+.team-intro p {
+  max-width:470px;
+  color:#475569;
+  line-height:1.6;
+  font-size:14px;
+  font-weight:600;
+}
+
+.team-values {
+  display:flex;
+  gap:32px;
+  padding-top:35px;
+}
+
+.team-values div {
+  text-align:center;
+}
+
+.team-values strong {
+  font-size:26px;
+  color:#347ef8;
+}
+
+.team-values h3 {
+  margin:8px 0 4px;
+  font-size:13px;
+}
+
+.team-values p {
+  margin:0;
+  font-size:11px;
+}
+
+.team-layout {
+  display:grid;
+  grid-template-columns:1fr 330px;
+  gap:34px;
+  align-items:center;
+}
+
+.team-grid {
+  grid-template-columns:repeat(3,1fr);
+}
+
+.team-quote {
+  background:#f1f6ff;
+  border-radius:8px;
+  padding:35px 30px;
+}
+
+.quote-mark {
+  font-size:48px;
+  color:#347ef8;
+  line-height:1;
+}
+
+.team-quote p {
+  font-size:18px;
+  font-weight:700;
+  line-height:1.45;
+}
+
+.team-quote span {
+  font-size:13px;
+  color:#64748b;
+}
+
+.about-team-page .collab-banner {
+  margin-top:38px;
+}
+
+@media(max-width:900px){
+  .team-intro,.team-layout{
+    display:block;
+  }
+  .team-values{
+    margin-top:25px;
+  }
+}
