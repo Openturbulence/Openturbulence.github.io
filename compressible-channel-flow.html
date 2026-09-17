@@ -16,6 +16,17 @@
     .setup-table td:first-child {
       text-align: center;
     }
+
+    /* Align Kaggle access text with Zenodo link */
+    .kaggle-toggle {
+      justify-content: flex-start !important;
+      text-align: left;
+    }
+    .kaggle-toggle strong {
+      flex: 1;
+      text-align: left;
+      margin-left: 0;
+    }
   </style>
 </head>
 <body class="dataset-detail-page">
@@ -137,11 +148,27 @@
               <strong>Zenodo Statistical Data</strong>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            <a href="https://www.kaggle.com/datasets/datafluid/compressible-channel-flow-dns-reb7667mb0-8" target="_blank" rel="noreferrer" class="access-link">
-              <span class="repo-logo kaggle-logo">k</span>
-              <strong>Kaggle Instantaneous Data</strong>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
+            <div class="kaggle-dropdown">
+              <button class="access-link kaggle-toggle" type="button" aria-expanded="false">
+                <span class="repo-logo kaggle-logo">k</span>
+                <strong>Kaggle Instantaneous Data</strong>
+                <svg class="kaggle-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+
+              <div class="kaggle-case-list">
+                <a class="kaggle-case-item" href="#" target="_blank" rel="noreferrer">
+                  R8KM08 <span>↗</span>
+                </a>
+                <a class="kaggle-case-item" href="#" target="_blank" rel="noreferrer">
+                  R8KM15 <span>↗</span>
+                </a>
+                <a class="kaggle-case-item" href="#" target="_blank" rel="noreferrer">
+                  R8KM30 <span>↗</span>
+                </a>
+              </div>
+            </div>
           </article>
 
           <article class="detail-card citation-list-card">
