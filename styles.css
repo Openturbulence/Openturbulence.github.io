@@ -2652,3 +2652,68 @@ body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) .site-footer
   margin-top: 0;
 }
 
+
+
+/* ===================== FINAL HOMEPAGE CLEANUP =====================
+   Consolidated homepage rules:
+   1. One flex layout controller
+   2. Continuous background between overview and footer
+   3. No white gap caused by remaining viewport height
+   4. All homepage-specific fixes are kept here instead of index.html
+=================================================================== */
+
+html, body {
+  min-height: 100vh;
+  height: 100%;
+}
+
+body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(52,126,248,.07), transparent 30%),
+    linear-gradient(180deg, #f8fbff 0%, #f4f8fd 100%);
+}
+
+body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(52,126,248,.07), transparent 30%),
+    linear-gradient(180deg, #f8fbff 0%, #f4f8fd 100%);
+}
+
+body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) .site-footer {
+  margin-top: auto;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) .database-intro,
+body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) .overview-section {
+  background: transparent;
+  border: 0;
+}
+
+body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) .overview-section {
+  flex: 0 0 auto;
+  min-height: 0;
+  padding-bottom: 30px;
+}
+
+.database-intro-inner,
+.overview-grid {
+  width: min(1115px, calc(100% - 160px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.database-intro-inner h2,
+.overview-copy h2,
+.overview-visual h2 {
+  color: #10233f;
+}
+
