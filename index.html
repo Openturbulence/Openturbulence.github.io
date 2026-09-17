@@ -10,6 +10,63 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+
+<style>
+.database-intro{
+  padding:32px 0;
+}
+.database-intro-inner{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.15fr 1.85fr;
+  gap:28px;
+  align-items:center;
+}
+.database-text h2{
+  margin:0 0 18px;
+  font-size:26px;
+}
+.database-text p{
+  line-height:1.75;
+  margin:0 0 14px;
+}
+.database-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+.database-card{
+  background:#fff;
+  border:1px solid #dbe5f5;
+  border-radius:10px;
+  padding:18px;
+  min-height:160px;
+}
+.database-card h3{
+  margin:12px 0 10px;
+  font-size:18px;
+}
+.database-card p{
+  margin:0;
+  font-size:14px;
+  line-height:1.55;
+}
+.database-card .icon-bubble{
+  width:34px;
+  height:34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#eef5ff;
+  color:#3478ff;
+}
+@media(max-width:900px){
+ .database-intro-inner{grid-template-columns:1fr;}
+ .database-cards{grid-template-columns:1fr;}
+}
+</style>
 </head>
 <body>
   <header class="site-header" id="top">
@@ -61,8 +118,7 @@
       </div>
     </section>
 
-    
-<section class="database-intro" aria-label="Database information">
+    <section class="feature-band database-intro" aria-label="Database information">
   <div class="database-intro-inner">
     <div class="database-text">
       <h2>Database Basics</h2>
@@ -81,23 +137,25 @@
 
     <div class="database-cards">
       <article class="database-card">
+        <div class="icon-bubble"><span>◉</span></div>
         <h3>Mission</h3>
-        <p>Provide a reliable open-access repository of turbulence datasets to support research and education across engineering, physics, and data science.</p>
+        <p>Provide a reliable open-access repository of turbulence datasets to accelerate research and education across engineering, physics, and data science.</p>
       </article>
 
       <article class="database-card">
+        <div class="icon-bubble"><span>◌</span></div>
         <h3>Vision</h3>
-        <p>Build a comprehensive platform for reproducible turbulence research and scientific collaboration.</p>
+        <p>Become a comprehensive platform for reproducible turbulence research and scientific collaboration.</p>
       </article>
 
       <article class="database-card">
+        <div class="icon-bubble"><span>♧</span></div>
         <h3>Open Science</h3>
-        <p>Promote open data sharing and facilitate contributions from researchers worldwide.</p>
+        <p>Promote open data sharing and encourage contributions from researchers worldwide.</p>
       </article>
     </div>
   </div>
 </section>
-
 
     <section class="overview-section" id="datasets" aria-label="Database overview">
       <div class="overview-grid">
