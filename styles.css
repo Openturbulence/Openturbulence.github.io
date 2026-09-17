@@ -2571,30 +2571,38 @@ a {
   background: #f1f6ff;
 }
 
-/* ===================== Homepage layout final override ===================== */
-/* Consolidated homepage adjustments:
-   - Database Basics and Database Overview share the same alignment
-   - Homepage sections have continuous background transition
-   - Footer follows content without unnecessary blank space
-*/
+/* ===================== Homepage final layout override =====================
+   Consolidated:
+   - Homepage vertical flex layout
+   - Footer pinned to viewport bottom when content is short
+   - No duplicate footer overrides
+   - Continuous homepage background
+========================================================================= */
 
+/* Homepage page shell */
 body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) {
   min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
 
+/* Let homepage content occupy remaining viewport height */
 body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) main {
-  flex: 0 0 auto;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 0;
 }
 
+/* Footer stays at the bottom */
 body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) .site-footer {
-  margin-top: 0;
+  margin-top: auto;
   flex-shrink: 0;
+  width: 100%;
 }
 
-/* Common homepage content width */
+/* Common homepage alignment */
 .database-intro-inner,
 .overview-grid {
   width: min(1115px, calc(100% - 160px));
@@ -2602,7 +2610,7 @@ body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) .site-footer
   margin-right: auto;
 }
 
-/* Same heading hierarchy */
+/* Unified heading style */
 .database-intro-inner h2,
 .database-text h2,
 .overview-copy h2,
@@ -2614,7 +2622,7 @@ body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) .site-footer
   letter-spacing: -0.03em;
 }
 
-/* Remove hard separation between homepage blocks */
+/* Homepage sections */
 .feature-band {
   border-bottom: none;
   padding-bottom: 0;
@@ -2644,7 +2652,3 @@ body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) .site-footer
   margin-top: 0;
 }
 
-/* Homepage footer spacing correction */
-body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) .overview-section {
-  min-height: auto;
-}
