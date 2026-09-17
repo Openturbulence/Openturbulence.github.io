@@ -2570,3 +2570,85 @@ a {
   color: #347ef8;
   background: #f1f6ff;
 }
+
+
+/* ===================== Homepage alignment refinement ===================== */
+/* Unify Database Basics and Database Overview left alignment */
+.database-intro-inner,
+.overview-grid {
+  width: min(1115px, calc(100% - 160px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Remove visual separation between the two homepage information blocks */
+.feature-band {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.database-intro-inner {
+  padding-bottom: 0;
+}
+
+.overview-section {
+  padding-top: 0;
+  margin-top: 0;
+  border-top: none;
+}
+
+/* Keep the same background transition instead of a hard dividing line */
+.feature-band,
+.overview-section {
+  background:
+    radial-gradient(circle at 18% 20%, rgba(52,126,248,.07), transparent 30%),
+    linear-gradient(180deg, #f8fbff 0%, #f4f8fd 100%);
+}
+
+/* Align title hierarchy */
+.database-intro-inner h2,
+.overview-copy h2,
+.visualization-panel h2 {
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.database-intro-inner h2 {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+/* Make overview start at exactly the same x-position */
+.overview-copy {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.overview-copy h2 {
+  margin-top: 0;
+}
+
+/* Reduce excessive empty gap between database description and overview */
+.overview-section {
+  min-height: 310px;
+  padding-bottom: 43px;
+}
+
+.database-intro-inner {
+  align-items: start;
+}
+
+/* Homepage database mini cards: cleaner academic style */
+.mission-mini-grid .mini-icon {
+  display: none;
+}
+
+.mini-info-card {
+  padding-top: 18px;
+}
+
+.mini-info-card h3 {
+  margin-top: 0;
+}
