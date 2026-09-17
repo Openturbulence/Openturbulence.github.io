@@ -129,6 +129,101 @@
 }
 </style>
 
+
+<style>
+/* Final adjustment for Database Basics section */
+.database-intro{
+  padding:28px 0 34px;
+  background:#f3f8ff;
+  border:0 !important;
+  position:relative;
+}
+
+.database-intro::after{
+  display:none !important;
+}
+
+.database-intro-inner{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:390px 1fr;
+  gap:38px;
+  align-items:start;
+}
+
+/* align with Database Overview title */
+.database-text h2,
+.overview-copy h2,
+.overview-visual h2{
+  font-size:22px;
+  font-weight:700;
+  line-height:1.3;
+  margin:0 0 18px;
+  color:#10233f;
+}
+
+.database-text{
+  padding-top:0;
+}
+
+.database-text p{
+  font-size:14px;
+  line-height:1.75;
+  margin:0 0 12px;
+  color:#173354;
+}
+
+.database-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  padding-top:2px;
+}
+
+.database-card{
+  min-height:175px;
+  background:#ffffff;
+  border:1px solid #dbe5f5;
+  border-radius:12px;
+  padding:20px 18px;
+  box-shadow:none;
+}
+
+.database-card h3{
+  font-size:16px;
+  line-height:1.35;
+  margin:0 0 12px;
+}
+
+.database-card p{
+  font-size:13px;
+  line-height:1.65;
+  margin:0;
+}
+
+.card-line{
+  width:36px;
+  height:3px;
+  margin-bottom:15px;
+}
+
+/* remove artificial separation between two sections */
+.overview-section{
+  border-top:0 !important;
+  margin-top:0 !important;
+  background:linear-gradient(180deg,#f3f8ff 0%,#eef5ff 100%);
+}
+
+@media(max-width:900px){
+ .database-intro-inner{
+   grid-template-columns:1fr;
+ }
+ .database-cards{
+   grid-template-columns:1fr;
+ }
+}
+</style>
 </head>
 <body>
   <header class="site-header" id="top">
