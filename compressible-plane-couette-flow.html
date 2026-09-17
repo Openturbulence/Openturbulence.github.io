@@ -16,6 +16,84 @@
     .setup-table td:first-child {
       text-align: center;
     }
+
+    /* Highlight cases with public instantaneous-field data */
+    .setup-table tr.data-available td {
+      background: #eaf4ff;
+    }
+
+    .setup-table tr.data-available td:first-child {
+      border-left: 4px solid #3b82f6;
+      font-weight: 700;
+      color: #2563eb;
+    }
+
+    .setup-table tr.data-available:hover td {
+      background: #dbeafe;
+    }
+
+    .data-availability-note td {
+      background: #f8fbff;
+      border-top: 1px solid #dbeafe;
+      padding: 14px 16px;
+      color: #334155;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .data-availability-note .status-dot {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      background: #3b82f6;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+
+    .kaggle-dropdown {
+      position: relative;
+    }
+
+    .kaggle-toggle {
+      cursor: pointer;
+      justify-content: flex-start !important;
+    }
+
+    .kaggle-toggle strong {
+      flex: 1;
+      text-align: left;
+    }
+
+    .kaggle-case-list {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s ease;
+      margin-top: 8px;
+    }
+
+    .kaggle-case-list.open {
+      max-height: 200px;
+    }
+
+    .kaggle-case-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      margin-bottom: 6px;
+      border: 1px solid #dbeafe;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #1e293b;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .kaggle-case-item:hover {
+      background: #eff6ff;
+      color: #2563eb;
+    }
+
   </style>
 </head>
 <body class="dataset-detail-page">
@@ -98,10 +176,16 @@
                   <tr><td>R10KM08</td><td>0.8</td><td>10000</td><td>515.9</td><td>456.4</td><td>24π</td><td>6π</td><td>3072 × 257 × 1536</td><td>12.6</td><td>6.3</td><td>0.60, 8.36</td></tr>
                   <tr><td>R2KM15</td><td>1.5</td><td>1500</td><td>104.9</td><td>72.6</td><td>24π</td><td>6π</td><td>768 × 129 × 384</td><td>10.3</td><td>5.1</td><td>0.25, 3.40</td></tr>
                   <tr><td>R4KM15</td><td>1.5</td><td>4000</td><td>251.5</td><td>172.2</td><td>24π</td><td>6π</td><td>1536 × 193 × 768</td><td>12.3</td><td>6.2</td><td>0.39, 5.44</td></tr>
-                  <tr><td>R10KM15</td><td>1.5</td><td>10000</td><td>571.4</td><td>389.8</td><td>24π</td><td>6π</td><td>3072 × 257 × 1536</td><td>14.0</td><td>7.0</td><td>0.66, 9.26</td></tr>
+                  <tr class="data-available"><td>R10KM15</td><td>1.5</td><td>10000</td><td>571.4</td><td>389.8</td><td>24π</td><td>6π</td><td>3072 × 257 × 1536</td><td>14.0</td><td>7.0</td><td>0.66, 9.26</td></tr>
                   <tr><td>R4KM30</td><td>3.0</td><td>4000</td><td>327.2</td><td>113.7</td><td>24π</td><td>6π</td><td>1536 × 193 × 768</td><td>16.0</td><td>8.0</td><td>0.51, 7.07</td></tr>
-                  <tr><td>R4KM50</td><td>5.0</td><td>4000</td><td>464.2</td><td>74.3</td><td>24π</td><td>6π</td><td>2048 × 193 × 1024</td><td>17.0</td><td>8.5</td><td>0.72, 10.02</td></tr>
+                  <tr class="data-available"><td>R4KM50</td><td>5.0</td><td>4000</td><td>464.2</td><td>74.3</td><td>24π</td><td>6π</td><td>2048 × 193 × 1024</td><td>17.0</td><td>8.5</td><td>0.72, 10.02</td></tr>
                 </tbody>
+                <tr class="data-availability-note">
+                  <td colspan="11">
+                    <span class="status-dot"></span>
+                    Highlighted cases provide public access to instantaneous-field datasets through Kaggle.
+                  </td>
+                </tr>
               </table>
             </div>
             <p class="table-footnote">M<sub>w</sub>: wall Mach number; Re<sub>w</sub>: wall Reynolds number; Re<sub>τ</sub>: friction Reynolds number; Re<sub>τc<sup>*</sup></sub>: centerline semilocal friction Reynolds number; h: half-height of channel. All listed cases use L<sub>y</sub> = 2h.</p>
@@ -131,11 +215,19 @@
               <strong>Zenodo Statistical Data</strong>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            <a href="#" target="_blank" rel="noreferrer" class="access-link">
-              <span class="repo-logo kaggle-logo">k</span>
-              <strong>Kaggle Instantaneous Data</strong>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
+            <div class="kaggle-dropdown">
+              <button class="access-link kaggle-toggle" type="button" aria-expanded="false">
+                <span class="repo-logo kaggle-logo">k</span>
+                <strong>Kaggle Instantaneous Data</strong>
+                <svg class="kaggle-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="kaggle-case-list">
+                <a class="kaggle-case-item" href="#" target="_blank" rel="noreferrer">R10KM15 <span>↗</span></a>
+                <a class="kaggle-case-item" href="#" target="_blank" rel="noreferrer">R4KM50 <span>↗</span></a>
+              </div>
+            </div>
           </article>
 
           <article class="detail-card citation-list-card">
@@ -187,6 +279,15 @@
     </div>
   </footer>
 
+  <script>
+document.querySelectorAll('.kaggle-toggle').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const list=btn.nextElementSibling;
+    const open=list.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+  });
+});
+</script>
   <script src="script.js"></script>
 </body>
 </html>
