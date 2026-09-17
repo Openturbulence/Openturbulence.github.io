@@ -2652,3 +2652,42 @@ a {
 .mini-info-card h3 {
   margin-top: 0;
 }
+
+
+/* ===================== Final homepage fixes ===================== */
+
+/* Database Basics title: match Database Overview darkness and weight */
+.database-text h2 {
+  color: #111827 !important;
+  font-weight: 800 !important;
+}
+
+/* Ensure Database Basics and Database Overview start from the same left edge */
+.database-intro-inner,
+.overview-grid {
+  width: min(1115px, calc(100% - 160px)) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Remove unnecessary vertical blank area before footer on homepage */
+body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) main {
+  flex: 0 0 auto;
+}
+
+body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) .overview-section {
+  min-height: 0 !important;
+  padding-bottom: 30px !important;
+}
+
+/* Footer follows content directly */
+body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) .site-footer {
+  margin-top: 0 !important;
+  flex-shrink: 0;
+}
