@@ -2846,3 +2846,49 @@ body:not(.datasets-page):not(.about-page):not(.dataset-detail-page) .feature-ban
     radial-gradient(circle at 18% 20%, rgba(52,126,248,.07), transparent 30%),
     linear-gradient(180deg, #f8fbff 0%, #f4f8fd 100%);
 }
+
+
+/* ===================== FINAL ABOUT FOOTER POSITION FIX =====================
+   Keep footer pinned to bottom when About content is shorter than viewport.
+   Do not change About page spacing/layout.
+============================================================================= */
+
+html,
+body {
+  min-height: 100%;
+}
+
+body.about-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(circle at 25% 0%, rgba(52,126,248,.055), transparent 30%),
+    linear-gradient(180deg, #fbfdff 0%, #f4f8fc 100%);
+}
+
+body.about-page > main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+body.about-page .about-main {
+  flex: 1 0 auto;
+}
+
+body.about-page .site-footer {
+  margin-top: auto;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+/* Remove possible bottom blank caused by inner spacing */
+body.about-page .about-container {
+  padding-bottom: 0;
+}
+
+body.about-page .collab-banner {
+  margin-bottom: 0;
+}
