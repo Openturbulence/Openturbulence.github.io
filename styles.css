@@ -3216,3 +3216,77 @@ body.about-page .collab-banner {
     right:5px;
   }
 }
+
+
+/* ===================== Collaboration contact modal ===================== */
+
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(3, 9, 20, 0.55);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s ease, visibility .25s ease;
+}
+
+.contact-modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.contact-modal-content {
+  position: relative;
+  width: min(430px, calc(100% - 40px));
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 32px 34px;
+  box-shadow: 0 24px 60px rgba(15,23,42,.25);
+  transform: translateY(15px);
+  transition: transform .25s ease;
+}
+
+.contact-modal.show .contact-modal-content {
+  transform: translateY(0);
+}
+
+.contact-modal-content h3 {
+  margin: 0 0 16px;
+  color: #111827;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.contact-modal-content p {
+  margin: 0 0 14px;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.65;
+  font-weight: 600;
+}
+
+.contact-modal-content a {
+  color: #347ef8;
+  font-weight: 800;
+}
+
+.contact-modal-close {
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background: transparent;
+  color: #64748b;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.contact-modal-close:hover {
+  color: #111827;
+}
