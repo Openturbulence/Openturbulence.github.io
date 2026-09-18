@@ -173,7 +173,7 @@
             <h2>Collaboration &amp; Citation</h2>
             <p>We welcome collaborations, contributions, and feedback from the research community. If you use our data, please cite our database to support open science.</p>
             <div class="collab-actions">
-              <button class="btn btn-outline" id="contributeBtn">Contribute →</button>
+              <button type="button" class="btn btn-outline" id="contributeBtn">Contribute →</button>
             </div>
           </div>
         </section>
@@ -284,29 +284,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   </div>
 
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.getElementById("contributeBtn");
-    const modal = document.getElementById("contactModal");
-    const close = document.getElementById("closeContactModal");
-    if (btn && modal && close) {
-      btn.onclick = () => {
-        modal.classList.add("show");
-        modal.setAttribute("aria-hidden", "false");
-      };
-      close.onclick = () => {
-        modal.classList.remove("show");
-        modal.setAttribute("aria-hidden", "true");
-      };
-      modal.onclick = (e) => {
-        if (e.target === modal) {
-          modal.classList.remove("show");
-          modal.setAttribute("aria-hidden", "true");
-        }
-      };
-    }
-  });
-  </script>
   <script src="script.js"></script>
 </body>
 </html>
