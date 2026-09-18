@@ -281,3 +281,43 @@ updateApplyButtonState();
 
 })();
 
+
+
+// ===================== Collaboration contact modal =====================
+// Open / close Contribute popup on About page
+
+(function () {
+
+  const btn = document.getElementById("contributeBtn");
+  const modal = document.getElementById("contactModal");
+  const close = document.getElementById("closeContactModal");
+
+  // Only run on About page
+  if (!btn || !modal || !close) return;
+
+
+  // Open modal
+  btn.addEventListener("click", function () {
+    modal.classList.add("show");
+    modal.setAttribute("aria-hidden", "false");
+  });
+
+
+  // Close by X button
+  close.addEventListener("click", function () {
+    modal.classList.remove("show");
+    modal.setAttribute("aria-hidden", "true");
+  });
+
+
+  // Close by clicking outside
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      modal.classList.remove("show");
+      modal.setAttribute("aria-hidden", "true");
+    }
+  });
+
+
+})();
+
