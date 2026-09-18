@@ -82,25 +82,54 @@
         <section class="team-layout">
           <div class="leadership-block">
             <h2>Leadership &amp; Contributors</h2>
-            <div class="team-grid">
-              <article class="team-card">
-                <img class="team-photo team-photo-full" src="assets/team/Prof_Yao.jpg" alt="Prof. Jie Yao">
-                <h3>Prof. Jie Yao</h3>
-                <strong>Leader</strong>
-                <p>Expert in vortex dynamics, turbulence, flow control, and high-performance computing.</p>
-              </article>
-              <article class="team-card">
-                <img class="team-photo team-photo-full" src="assets/team/Postdoc_Chen.webp" alt="Postdoc. Yongkai Chen">
-                <h3>Postdoc. Yongkai Chen</h3>
-                <strong>Data Architect</strong>
-                <p>Designs scalable data infrastructure and tools to ensure performance, reliability, and accessibility.</p>
-              </article>
-              <article class="team-card">
-                <img class="team-photo team-photo-full" src="assets/team/Prof_Mao.png" alt="Prof. Xuerui Mao">
-                <h3>Prof. Xuerui Mao</h3>
-                <strong>Project Supervisor</strong>
-                <p>Leads the development of OTDB and drives data curation standards and community engagement.</p>
-              </article>
+
+            <div class="team-carousel">
+              <button class="team-carousel-button team-carousel-prev" aria-label="Previous contributor">
+                <svg viewBox="0 0 24 24"><path d="M15 18 9 12l6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+
+              <div class="team-carousel-viewport">
+                <div class="team-carousel-track">
+
+                  <article class="team-card">
+                    <img class="team-photo team-photo-full" src="assets/team/Prof_Yao.jpg" alt="Prof. Jie Yao">
+                    <h3>Prof. Jie Yao</h3>
+                    <strong>Leader</strong>
+                    <p>Expert in vortex dynamics, turbulence, flow control, and high-performance computing.</p>
+                    <a class="member-email" href="mailto:jieyao@outlook.com">
+                      <svg viewBox="0 0 24 24"><path d="M3 5h18v14H3V5Zm0 1 9 7 9-7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                      <span>jieyao@outlook.com</span>
+                    </a>
+                  </article>
+
+                  <article class="team-card">
+                    <img class="team-photo team-photo-full" src="assets/team/Postdoc_Chen.webp" alt="Postdoc. Yongkai Chen">
+                    <h3>Postdoc. Yongkai Chen</h3>
+                    <strong>Data Architect</strong>
+                    <p>Designs scalable data infrastructure and tools to ensure performance, reliability, and accessibility.</p>
+                    <a class="member-email" href="mailto:jieyao@outlook.com">
+                      <svg viewBox="0 0 24 24"><path d="M3 5h18v14H3V5Zm0 1 9 7 9-7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                      <span>jieyao@outlook.com</span>
+                    </a>
+                  </article>
+
+                  <article class="team-card">
+                    <img class="team-photo team-photo-full" src="assets/team/Prof_Mao.png" alt="Prof. Xuerui Mao">
+                    <h3>Prof. Xuerui Mao</h3>
+                    <strong>Project Supervisor</strong>
+                    <p>Leads the development of OTDB and drives data curation standards and community engagement.</p>
+                    <a class="member-email" href="mailto:jieyao@outlook.com">
+                      <svg viewBox="0 0 24 24"><path d="M3 5h18v14H3V5Zm0 1 9 7 9-7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                      <span>jieyao@outlook.com</span>
+                    </a>
+                  </article>
+
+                </div>
+              </div>
+
+              <button class="team-carousel-button team-carousel-next" aria-label="Next contributor">
+                <svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
             </div>
           </div>
 
@@ -199,6 +228,53 @@
       </div>
     </div>
   </footer>
+
+  
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".team-carousel-track");
+  const prev = document.querySelector(".team-carousel-prev");
+  const next = document.querySelector(".team-carousel-next");
+
+  if (!track || !prev || !next) return;
+
+  let index = 0;
+
+  function visibleCards() {
+    if (window.innerWidth <= 640) return 1;
+    if (window.innerWidth <= 900) return 2;
+    return 3;
+  }
+
+  function updateCarousel() {
+    const cards = track.querySelectorAll(".team-card");
+    const visible = visibleCards();
+    const max = Math.max(0, cards.length - visible);
+
+    index = Math.min(index, max);
+
+    const gap = 14;
+    const cardWidth = (track.parentElement.clientWidth - gap * (visible - 1)) / visible;
+    track.style.transform = `translateX(-${index * (cardWidth + gap)}px)`;
+
+    prev.disabled = index === 0;
+    next.disabled = index === max;
+  }
+
+  next.onclick = () => {
+    index++;
+    updateCarousel();
+  };
+
+  prev.onclick = () => {
+    index--;
+    updateCarousel();
+  };
+
+  window.addEventListener("resize", updateCarousel);
+  updateCarousel();
+});
+</script>
 
   <script src="script.js"></script>
 </body>
