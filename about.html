@@ -173,8 +173,7 @@
             <h2>Collaboration &amp; Citation</h2>
             <p>We welcome collaborations, contributions, and feedback from the research community. If you use our data, please cite our database to support open science.</p>
             <div class="collab-actions">
-              <a class="btn btn-primary" href="#">How to Cite →</a>
-              <a class="btn btn-outline" href="#">Contribute →</a>
+              <button class="btn btn-outline" id="contributeBtn">Contribute →</button>
             </div>
           </div>
         </section>
@@ -271,6 +270,43 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+  <div class="contact-modal" id="contactModal" aria-hidden="true">
+    <div class="contact-modal-content">
+      <button class="contact-modal-close" id="closeContactModal" aria-label="Close">×</button>
+      <h3>Collaboration &amp; Data Sharing</h3>
+      <p>
+        If you are interested in collaborating with us, contributing research data,
+        or sharing high-quality turbulence datasets, please feel free to contact us.
+      </p>
+      <p>
+        Email: <a href="mailto:jieyaobit@outlook.com">jieyaobit@outlook.com</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("contributeBtn");
+    const modal = document.getElementById("contactModal");
+    const close = document.getElementById("closeContactModal");
+    if (btn && modal && close) {
+      btn.onclick = () => {
+        modal.classList.add("show");
+        modal.setAttribute("aria-hidden", "false");
+      };
+      close.onclick = () => {
+        modal.classList.remove("show");
+        modal.setAttribute("aria-hidden", "true");
+      };
+      modal.onclick = (e) => {
+        if (e.target === modal) {
+          modal.classList.remove("show");
+          modal.setAttribute("aria-hidden", "true");
+        }
+      };
+    }
+  });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
