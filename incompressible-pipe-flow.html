@@ -16,7 +16,46 @@
     .setup-table td:first-child {
       text-align: center;
     }
-  </style>
+  
+    .kaggle-toggle {
+      justify-content: flex-start !important;
+      text-align: left;
+    }
+    .kaggle-toggle strong {
+      flex: 1;
+      text-align: left;
+      margin-left: 0;
+    }
+
+    .setup-table tr.data-available td {
+      background: #eaf4ff;
+    }
+    .setup-table tr.data-available td:first-child {
+      border-left: 4px solid #3b82f6;
+      font-weight: 700;
+      color: #2563eb;
+    }
+    .setup-table tr.data-available:hover td {
+      background: #dbeafe;
+    }
+
+    .data-availability-note td {
+      background: #f8fbff;
+      border-top: 1px solid #dbeafe;
+      padding: 14px 16px;
+      color: #334155;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .data-availability-note .status-dot {
+      display:inline-block;
+      width:9px;
+      height:9px;
+      background:#3b82f6;
+      border-radius:50%;
+      margin-right:8px;
+    }
+</style>
 </head>
 <body class="dataset-detail-page">
   <header class="site-header" id="top">
@@ -87,11 +126,14 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td>181</td><td>5300</td><td>1024 × 192 × 256</td><td>5.5</td><td>0.02</td><td>2.0</td><td>4.4</td></tr>
-                  <tr><td>549</td><td>19000</td><td>2048 × 256 × 768</td><td>8.4</td><td>0.09</td><td>3.2</td><td>4.5</td></tr>
-                  <tr><td>998</td><td>37700</td><td>3072 × 384 × 1280</td><td>10.2</td><td>0.10</td><td>3.9</td><td>4.9</td></tr>
+                  <tr class="data-available"><td>181</td><td>5300</td><td>1024 × 192 × 256</td><td>5.5</td><td>0.02</td><td>2.0</td><td>4.4</td></tr>
+                  <tr class="data-available"><td>549</td><td>19000</td><td>2048 × 256 × 768</td><td>8.4</td><td>0.09</td><td>3.2</td><td>4.5</td></tr>
+                  <tr class="data-available"><td>998</td><td>37700</td><td>3072 × 384 × 1280</td><td>10.2</td><td>0.10</td><td>3.9</td><td>4.9</td></tr>
                   <tr><td>2001</td><td>83000</td><td>6144 × 768 × 2560</td><td>10.2</td><td>0.10</td><td>3.9</td><td>4.9</td></tr>
                   <tr><td>5197</td><td>240000</td><td>12288 × 1024 × 5120</td><td>12.8</td><td>0.20</td><td>8.6</td><td>6.3</td></tr>
+                  <tr class="data-availability-note">
+                    <td colspan="7"><span class="status-dot"></span>Highlighted cases provide public access to instantaneous-field datasets through Kaggle.</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -122,11 +164,20 @@
               <strong>Zenodo Statistical Data</strong>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            <a href="#" target="_blank" rel="noreferrer" class="access-link">
-              <span class="repo-logo kaggle-logo">k</span>
-              <strong>Kaggle Instantaneous Data</strong>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
+            <div class="kaggle-dropdown">
+              <button class="access-link kaggle-toggle" type="button" aria-expanded="false">
+                <span class="repo-logo kaggle-logo">k</span>
+                <strong>Kaggle Instantaneous Data</strong>
+                <svg class="kaggle-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </button>
+              <div class="kaggle-case-list">
+                <a class="kaggle-case-item" href="#" target="_blank">Re<sub>τ</sub> ≈ 180 <span>↗</span></a>
+                <a class="kaggle-case-item" href="#" target="_blank">Re<sub>τ</sub> ≈ 550 <span>↗</span></a>
+                <a class="kaggle-case-item" href="#" target="_blank">Re<sub>τ</sub> ≈ 1000 <span>↗</span></a>
+              </div>
+            </div>
           </article>
 
           <article class="detail-card citation-list-card">
