@@ -284,40 +284,59 @@ updateApplyButtonState();
 
 
 // ===================== Collaboration contact modal =====================
-// Open / close Contribute popup on About page
+// Contribute popup on About page
 
-(function () {
+document.addEventListener("DOMContentLoaded", function () {
 
-  const btn = document.getElementById("contributeBtn");
-  const modal = document.getElementById("contactModal");
-  const close = document.getElementById("closeContactModal");
+  const contributeBtn = document.getElementById("contributeBtn");
+  const contactModal = document.getElementById("contactModal");
+  const closeModal = document.getElementById("closeContactModal");
 
-  // Only run on About page
-  if (!btn || !modal || !close) return;
+
+  if (!contributeBtn || !contactModal || !closeModal) {
+    return;
+  }
 
 
   // Open modal
-  btn.addEventListener("click", function () {
-    modal.classList.add("show");
-    modal.setAttribute("aria-hidden", "false");
-  });
+  contributeBtn.onclick = function () {
+    contactModal.classList.add("show");
+    contactModal.setAttribute("aria-hidden", "false");
+  };
 
 
-  // Close by X button
-  close.addEventListener("click", function () {
-    modal.classList.remove("show");
-    modal.setAttribute("aria-hidden", "true");
-  });
+  // Close button
+  closeModal.onclick = function () {
+    contactModal.classList.remove("show");
+    contactModal.setAttribute("aria-hidden", "true");
+  };
 
 
-  // Close by clicking outside
-  modal.addEventListener("click", function (event) {
-    if (event.target === modal) {
-      modal.classList.remove("show");
-      modal.setAttribute("aria-hidden", "true");
+  // Click outside modal
+  contactModal.onclick = function (event) {
+
+    if (event.target === contactModal) {
+
+      contactModal.classList.remove("show");
+      contactModal.setAttribute("aria-hidden", "true");
+
     }
+
+  };
+
+
+  // ESC close
+  document.addEventListener("keydown", function(event){
+
+    if(event.key === "Escape"){
+
+      contactModal.classList.remove("show");
+      contactModal.setAttribute("aria-hidden", "true");
+
+    }
+
   });
 
 
-})();
+});
 
